@@ -379,7 +379,7 @@ export default function WeddingInvitationWebsite() {
             </section>
 
             <section className="bg-[#f6f1ea] px-6 py-24 text-center">
-              <h2 className="text-3xl italic text-[#7a3727]">婚礼时间 · Wedding Time</h2>
+              <h2 className="text-3xl italic text-[#7a3727]">婚礼流程 · Wedding Time</h2>
               <div className="relative mx-auto mt-16 max-w-3xl">
                 <div className="absolute bottom-0 left-1/2 top-0 hidden w-[1px] -translate-x-1/2 bg-[#d8c4aa] md:block" />
 
