@@ -8,7 +8,6 @@ export default function WeddingInvitationWebsite() {
   const [isCurtainOpening, setIsCurtainOpening] = useState(false);
   const RSVP_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxAA__B0KP3g5ZBNhU_xmMzYX2ZsNm_jSRdt1QaLBomT0QoxBajMRR1ek4B6HTbwawDnw/exec";
 
-  const [youtubeUrl] = useState("");
   const [guestName, setGuestName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [guestCount, setGuestCount] = useState("1");
