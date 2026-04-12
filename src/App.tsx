@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Hand, Music2 } from "lucide-react";
+import { Hand } from "lucide-react";
 
 export default function WeddingInvitationWebsite() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -8,7 +8,7 @@ export default function WeddingInvitationWebsite() {
   const [isCurtainOpening, setIsCurtainOpening] = useState(false);
   const RSVP_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxAA__B0KP3g5ZBNhU_xmMzYX2ZsNm_jSRdt1QaLBomT0QoxBajMRR1ek4B6HTbwawDnw/exec";
 
-  const [youtubeUrl, setYoutubeUrl] = useState("");
+  const [youtubeUrl] = useState("");
   const [guestName, setGuestName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [guestCount, setGuestCount] = useState("1");
@@ -23,12 +23,6 @@ export default function WeddingInvitationWebsite() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const extractYoutubeId = (url: string) => {
-    const match = url.match(/(?:v=|youtu\.be\/|embed\/)([^&?/]+)/);
-    return match ? match[1] : "";
-  };
-
-  const youtubeId = useMemo(() => extractYoutubeId(youtubeUrl), [youtubeUrl]);
 
   const openInvitation = () => {
     if (isCurtainOpening || isCurtainOpened) return;
