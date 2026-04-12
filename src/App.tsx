@@ -289,7 +289,7 @@ export default function WeddingInvitationWebsite() {
                     希望您见证我们的婚礼,<br />
 					  与我们共度人生中最特别的一天。
                     <br />
-                    CELEBRATE WITH US THE <br />MOST SPECIAL DAY <br />OF OUR LIVES. IT WOULD BE AN HONOR TO <br />HAVE YOU PRESENT AT <br />THIS IMPORTANT MOMENT.
+                    CELEBRATE WITH US THE <br />MOST SPECIAL DAY <br />OF OUR LIVES. <br />IT WOULD BE AN HONOR TO <br />HAVE YOU PRESENT AT <br />THIS IMPORTANT MOMENT.
                   </p>
                 </motion.div>
 
