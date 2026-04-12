@@ -261,7 +261,9 @@ export default function WeddingInvitationWebsite() {
                 >
                   诚挚邀请您参加我们的婚礼
                   <br />
-                  YOU ARE CORDIALLY INVITED TO CELEBRATE THE WEDDING OF
+                  YOU ARE CORDIALLY INVITED
+					<br />
+				TO CELEBRATE THE WEDDING OF
                 </motion.p>
 
                 <motion.h1
@@ -284,9 +286,10 @@ export default function WeddingInvitationWebsite() {
                   className="mt-10 max-w-3xl space-y-5 px-2 sm:px-4"
                 >
                   <p className="text-sm leading-7 tracking-[0.06em] text-[#7a3727] sm:text-base sm:leading-8 sm:tracking-[0.1em] md:text-lg md:tracking-[0.16em]">
-                    希望您见证我们的婚礼，与我们共度人生中最特别的一天。
+                    希望您见证我们的婚礼,<br />
+					  与我们共度人生中最特别的一天。
                     <br />
-                    CELEBRATE WITH US THE MOST SPECIAL DAY OF OUR LIVES. IT WOULD BE AN HONOR TO HAVE YOU PRESENT AT THIS IMPORTANT MOMENT.
+                    CELEBRATE WITH US THE MOST SPECIAL DAY <br />OF OUR LIVES. IT WOULD BE AN HONOR TO <br />HAVE YOU PRESENT AT THIS IMPORTANT MOMENT.
                   </p>
                 </motion.div>
 
