@@ -312,7 +312,9 @@ export default function WeddingInvitationWebsite() {
                   我们要结婚啦 · We&apos;re getting married
                   <br />
                   <span className="block mt-2 text-3xl sm:text-4xl font-semibold">
-                    2026年9月19日 · 19th September 2026
+                    2026年9月19日
+					  <br />
+					  19th September 2026
                   </span>
 				  <br />
                 </p>
