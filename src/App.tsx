@@ -289,7 +289,7 @@ export default function WeddingInvitationWebsite() {
                     希望您见证我们的婚礼,<br />
 					  与我们共度人生中最特别的一天。
                     <br />
-                    CELEBRATE WITH US THE MOST SPECIAL DAY <br />OF OUR LIVES. IT WOULD BE AN HONOR TO <br />HAVE YOU PRESENT AT THIS IMPORTANT MOMENT.
+                    CELEBRATE WITH US THE <br />MOST SPECIAL DAY <br />OF OUR LIVES. IT WOULD BE AN HONOR TO <br />HAVE YOU PRESENT AT <br />THIS IMPORTANT MOMENT.
                   </p>
                 </motion.div>
 
@@ -432,7 +432,7 @@ export default function WeddingInvitationWebsite() {
             </section>
 
             <section className="bg-[#f6f1ea] px-6 py-24 text-center">
-              <h2 className="text-4xl font-serif text-[#7a3727]">着装要求 · Dress Code</h2>
+              <h2 className="text-4xl font-serif text-[#7a3727]">服装搭配 · Dress Code</h2>
               <div className="mt-10 flex justify-center">
                 <img
                   src="/formal.png"
