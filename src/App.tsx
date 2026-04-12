@@ -87,10 +87,10 @@ export default function WeddingInvitationWebsite() {
       return;
     }
 
-    if (RSVP_WEB_APP_URL === "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE") {
-      alert("Please paste your Google Apps Script Web App URL first.");
-      return;
-    }
+    if (!RSVP_WEB_APP_URL.trim()) {
+  alert("Please paste your Google Apps Script Web App URL first.");
+  return;
+}
 
     setIsSubmitting(true);
     setSubmitStatus("idle");
