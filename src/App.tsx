@@ -348,7 +348,7 @@ export default function WeddingInvitationWebsite() {
             <section className="bg-[#f6f1ea] px-6 py-24 text-center">
               <h2 className="text-3xl italic text-[#7a3727]">婚礼地点 · Venue</h2>
               <h3 className="mt-6 text-3xl font-serif text-[#7a3727]">
-                北京楼柔佛再也 · Restaurant Pekin Johor Jaya
+                北京楼柔佛再也2号厅 · Restaurant Pekin Johor Jaya Hall 2
               </h3>
               <div className="mt-10 overflow-hidden rounded-2xl border border-[#e5d8cb] shadow-sm">
                 <iframe
