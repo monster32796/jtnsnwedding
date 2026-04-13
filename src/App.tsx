@@ -569,7 +569,7 @@ export default function WeddingInvitationWebsite() {
                     </div>
                   )}
 
-                  <button type="button" onClick={handleSubmitRSVP} disabled={isSubmitting} className="w-full rounded-2xl bg-[#7a3727] px-6 py-4 text-white uppercase disabled:cursor-not-allowed disabled:opacity-60">{isSubmitting ? "Submitting..." : "Submit RSVP"}</button>
+                  <button type="button" onClick={handleSubmitRSVP} disabled={isSubmitting} className="w-full rounded-2xl bg-[#7a3727] px-6 py-4 text-white uppercase disabled:cursor-not-allowed disabled:opacity-60">{isSubmitting ? "Submitting..." : "提交 . Submit RSVP"}</button>
 
                   {submitStatus === "success" && (
                     <p className="text-center text-sm text-green-700">我们收到啦！ . We got it !</p>
