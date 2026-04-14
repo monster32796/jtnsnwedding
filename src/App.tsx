@@ -316,7 +316,7 @@ export default function WeddingInvitationWebsite() {
                   className="w-full max-w-lg mx-auto rounded-[2rem] shadow-lg"
                 />
                 <p className="mt-10 text-2xl italic text-[#7a3727]">
-                  我们要结婚啦 · We&apos;re getting married
+                  预留此日期 · Save the date
                   <br />
                   <span className="block mt-2 text-3xl sm:text-4xl font-semibold">
                     2026年9月19日
