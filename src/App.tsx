@@ -274,13 +274,13 @@ export default function WeddingInvitationWebsite() {
                 >
                   Jia Teck
                   <br />
-					佳得
+					吴佳得
 					<br />
                   <span className="text-3xl sm:text-4xl md:text-5xl">&</span>
                   <br />
-                  Shannon
+                  Shannon Ng
 					<br />
-					薪霓
+					黄薪霓
                 </motion.h1>
 
                 <motion.div
