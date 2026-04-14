@@ -272,7 +272,7 @@ export default function WeddingInvitationWebsite() {
                   transition={{ delay: 0.2, duration: 0.8 }}
                   className="mt-8 font-serif text-4xl leading-[1.05] tracking-tight text-[#7a3727] sm:text-5xl md:text-6xl lg:text-7xl"
                 >
-                  Jia Teck
+                  Goh Jia Teck
                   <br />
 					吴佳得
 					<br />
