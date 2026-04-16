@@ -22,7 +22,6 @@ export default function WeddingInvitationWebsite() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-
   const openInvitation = () => {
     if (isCurtainOpening || isCurtainOpened) return;
 
@@ -92,6 +91,7 @@ export default function WeddingInvitationWebsite() {
   return;
 }
 
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
@@ -120,11 +120,11 @@ export default function WeddingInvitationWebsite() {
       });
 
       setSubmitStatus("success");
-      alert("我们收到啦！ .  We got it !");
+      alert("RSVP submitted successfully.");
     } catch (error) {
       console.error("RSVP submission failed", error);
       setSubmitStatus("error");
-      alert("在发多一次哦！ . Re-submit Again !");
+      alert("Failed to submit RSVP. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -233,7 +233,7 @@ export default function WeddingInvitationWebsite() {
                   <Hand className="h-7 w-7 text-white/80 sm:h-8 sm:w-8" strokeWidth={1.6} />
                 </motion.div>
                 <p className="mt-5 text-sm tracking-[0.18em] text-white/80 sm:text-base">
-                  {isCurtainOpening ? "Opening..." : "点击惊喜 . Tap for surprise"}
+                  {isCurtainOpening ? "Opening..." : "Tap to continue"}
                 </p>
               </motion.button>
             </div>
@@ -244,9 +244,9 @@ export default function WeddingInvitationWebsite() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="bg-[#f6f1ea] text-[#6d3122]"
+            className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] text-[#6d3122]"
           >
-            <section className="relative min-h-screen overflow-hidden bg-[#f6f1ea]">
+            <section className="relative min-h-screen overflow-hidden bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px]">
               <div className="absolute inset-y-0 left-0 z-10 w-[13%] min-w-[54px] md:w-[16%] md:min-w-[90px] lg:w-[20%] lg:min-w-[140px] bg-[linear-gradient(90deg,#64100d_0%,#8c1712_18%,#73120e_36%,#971912_52%,#6d100d_70%,#8d1610_84%,#5a0c0a_100%)] opacity-95" />
               <div className="absolute inset-y-0 right-0 z-10 w-[13%] min-w-[54px] md:w-[16%] md:min-w-[90px] lg:w-[20%] lg:min-w-[140px] bg-[linear-gradient(270deg,#64100d_0%,#8c1712_18%,#73120e_36%,#971912_52%,#6d100d_70%,#8d1610_84%,#5a0c0a_100%)] opacity-95" />
               <div className="absolute inset-y-0 left-0 z-20 w-[13%] min-w-[54px] md:w-[16%] md:min-w-[90px] lg:w-[20%] lg:min-w-[140px] opacity-80 [background-image:repeating-linear-gradient(90deg,rgba(255,239,225,0)_0px,rgba(255,239,225,0)_24px,rgba(255,236,220,0.88)_28px,rgba(255,236,220,0.10)_31px,rgba(0,0,0,0.16)_37px,rgba(255,239,225,0)_56px)]" />
@@ -257,30 +257,50 @@ export default function WeddingInvitationWebsite() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1, duration: 0.7 }}
-                  className="mx-auto max-w-[92%] text-[10px] uppercase tracking-[0.16em] text-[#7a3727] sm:text-xs sm:tracking-[0.24em] md:tracking-[0.32em]"
+                  className="text-sm text-[#7a3727] sm:text-base md:text-lg"
+                    style={{ lineHeight: "1.6", letterSpacing: "0.08em", fontFamily: "'Noto Serif SC', serif" }}
                 >
-                  诚挚邀请您参加我们的婚礼
+                  我们终于步入人生新篇章!
                   <br />
-                  YOU ARE CORDIALLY INVITED
-					<br />
-				TO CELEBRATE THE WEDDING OF
+				  <span
+                    className="text-sm text-[#7a3727] sm:text-base md:text-lg"
+                    style={{ lineHeight: "1.6", letterSpacing: "0.08em", fontFamily: "'Playfair Display', serif" }}
+                  >
+                  We finally tied the knot!
+				  </span>
                 </motion.p>
 
                 <motion.h1
                   initial={{ opacity: 0, y: 22 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
-                  className="mt-8 font-serif text-4xl leading-[1.05] tracking-tight text-[#7a3727] sm:text-5xl md:text-6xl lg:text-7xl"
+                  className="mt-8 text-4xl text-[#7a3727] sm:text-5xl md:text-6xl lg:text-7xl"
+                  style={{ fontFamily: "'Noto Serif SC', serif", letterSpacing: "0.08em", lineHeight: "1.1" }}
                 >
-                  Goh Jia Teck
+                  吴佳得
                   <br />
-					吴佳得
-					<br />
-                  <span className="text-3xl sm:text-4xl md:text-5xl">&</span>
+                  <span
+                    className="block mt-2 text-lg md:text-xl"
+                    style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}
+                  >
+                    Goh Jia Teck
+                  </span>
+                  <span className="text-3xl md:text-4xl"
+				  style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1", letterSpacing: "0.02em" }}>&</span><br />
                   <br />
-                  Shannon Ng
-					<br />
-					黄薪霓
+				  <span
+                    className="mt-8 text-4xl text-[#7a3727] sm:text-5xl md:text-6xl lg:text-7xl"
+                    style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1", letterSpacing: "0.02em" }}
+                  >
+                  黄薪霓
+				  </span>
+                  <br />
+                  <span
+                    className="block mt-2 text-lg md:text-xl"
+                    style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}
+                  >
+                    Shannon Ng
+                  </span>
                 </motion.h1>
 
                 <motion.div
@@ -289,11 +309,19 @@ export default function WeddingInvitationWebsite() {
                   transition={{ delay: 0.35, duration: 0.8 }}
                   className="mt-10 max-w-3xl space-y-5 px-2 sm:px-4"
                 >
-                  <p className="text-sm leading-7 tracking-[0.06em] text-[#7a3727] sm:text-base sm:leading-8 sm:tracking-[0.1em] md:text-lg md:tracking-[0.16em]">
-                    希望您见证我们的婚礼,<br />
-					  与我们共度人生中最特别的一天。
+                  <p
+                    className="text-sm text-[#7a3727] sm:text-base md:text-lg"
+                    style={{ lineHeight: "1.6", letterSpacing: "0.08em", fontFamily: "'Noto Serif SC', serif" }}
+                  >
+                    您的到来，将让这份喜悦更加圆满
                     <br />
-                    CELEBRATE WITH US THE <br />MOST SPECIAL DAY <br />OF OUR LIVES. <br />IT WOULD BE AN HONOR TO <br />HAVE YOU PRESENT AT <br />THIS IMPORTANT MOMENT.
+                    期待与您共享这美好时刻
+                    <br />
+                    <span style={{ fontFamily: "'Playfair Display', serif" }}>
+                      Your presence will only extend <br />the joy and the smiles on our face
+                      <br />
+                      We cannot afford to miss the pleasure <br />of your presences at our wedding
+                    </span>
                   </p>
                 </motion.div>
 
@@ -302,32 +330,80 @@ export default function WeddingInvitationWebsite() {
                   transition={{ duration: 2.4, repeat: Infinity }}
                   className="mt-14 flex flex-col items-center text-[#7a3727] sm:mt-16"
                 >
-                  <span className="text-xs uppercase tracking-[0.24em] sm:text-sm sm:tracking-[0.32em]">下滑 · Scroll</span>
+                  <span className="text-xs uppercase tracking-[0.24em] sm:text-sm sm:tracking-[0.32em]"
+				  style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}>下滑 · Scroll</span>
                   <span className="mt-3 text-4xl leading-none">↓</span>
                 </motion.div>
               </div>
             </section>
 
-            <section className="bg-[#f6f1ea] px-6 py-24 text-center">
+            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
               <div className="mx-auto max-w-4xl">
                 <img
                   src="/wedding.JPG"
                   alt="Wedding-picture"
                   className="w-full max-w-lg mx-auto rounded-[2rem] shadow-lg"
                 />
-                <p className="mt-10 text-2xl italic text-[#7a3727]">
-                  预留此日期 · Save the date
+                <p className="mt-10 text-2xl"
+				style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1", letterSpacing: "0.02em" }}>
                   <br />
-                  <span className="block mt-2 text-3xl sm:text-4xl font-semibold">
-                    2026年9月19日
-					  <br />
-					  19th September 2026
-                  </span>
+				  预留此日
 				  <br />
+				  <span className="mt-10 text-2xl"
+				  style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1", letterSpacing: "0.02em" }}>Save the Date</span>
+				  <br />
+				  <br />
+				  <br />
+                  <span className="block mt-2 text-3xl sm:text-4xl font-semibold" style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1", letterSpacing: "0.02em" }}>
+                    2026年9月19日
+                  </span>
+
+
+              <motion.div
+                initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="mx-auto mt-12 w-full]"
+              >
+                <div className="mx-auto max-w-[260px] text-[#5e3a31]">
+                  <div className="border-y border-[#7a3727]/60 py-3 text-center">
+                    <p
+                      className="text-[15px] uppercase tracking-[0.35em]"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      September&nbsp;&nbsp;&nbsp;2026
+                    </p>
+                  </div>
+
+                  <div className="mt-4 grid grid-cols-7 text-center text-[11px] uppercase tracking-[0.12em] text-[#6f4a3f]">
+                    {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
+                      <span key={day}>{day}</span>
+                    ))}
+                  </div>
+
+                  <div className="mt-3 grid grid-cols-7 items-center text-center text-lg">
+                    {[14, 15, 16, 17, 18].map((date) => (
+                      <span key={date} style={{ fontFamily: "'Playfair Display', serif" }}>{date}</span>
+                    ))}
+
+                    <motion.span
+                      initial={{ scale: 0.9, opacity: 0.7 }}
+                      animate={{ scale: [1, 1.08, 1], opacity: [0.85, 1, 0.85] }}
+                      transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                      className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#9b6b5b] text-[#7a3727]"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      19
+                    </motion.span>
+
+                    <span style={{ fontFamily: "'Playfair Display', serif" }}>20</span>
+                  </div>
+                </div>
+              </motion.div>
                 </p>
               </div>
-			  <h2 className="text-3xl italic text-[#7a3727]">倒计时 · Countdown</h2>
-              <div className="mt-10 flex flex-wrap justify-center gap-6">
+			  <div className="mt-10 flex flex-wrap justify-center gap-6">
                 {[
                   ["天", "DAYS", timeLeft.days],
                   ["时", "HOURS", timeLeft.hours],
@@ -345,15 +421,20 @@ export default function WeddingInvitationWebsite() {
                   </div>
                 ))}
               </div>
-			  <br />
-              <p className="text-3xl italic text-[#7a3727]">距离大喜之日 · until the big day</p>
+              <p className="mt-10 text-2xl" style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1", letterSpacing: "0.02em" }}>距婚礼之日</p>
+			  <span className="mt-10 text-2xl"
+				  style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.2", letterSpacing: "0.02em" }}>until the big day</span>
             </section>
 
-            <section className="bg-[#f6f1ea] px-6 py-24 text-center">
-              <h2 className="text-3xl italic text-[#7a3727]">婚礼地点 · Venue</h2>
-              <h3 className="mt-6 text-3xl font-serif text-[#7a3727]">
-                北京楼柔佛再也2号厅 · Restaurant Pekin Johor Jaya Hall 2
-              </h3>
+            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
+              <h2 className="text-3xl italic text-[#7a3727]">婚礼地点</h2>
+			  <h3 className="text-3xl italic text-[#7a3727]">Venue</h3>
+              <h4 className="mt-6 text-3xl font-serif text-[#7a3727]">
+                北京楼柔佛再也· 2号厅
+              </h4>
+			  <h5 className="mt-6 text-3xl font-serif text-[#7a3727]">
+                Restaurant Pekin Johor Jaya · Hall 2
+              </h5>
               <div className="mt-10 overflow-hidden rounded-2xl border border-[#e5d8cb] shadow-sm">
                 <iframe
                   src="https://www.google.com/maps?q=Restaurant+Pekin+Johor+Jaya&output=embed"
@@ -369,74 +450,72 @@ export default function WeddingInvitationWebsite() {
                 href="https://share.google/9RL9lEQIqXmD6aTnx"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#7a3727] underline"
+                className="flex items-center gap-3 px-6 py-3 rounded-full bg-white shadow-md border border-[#e5d8cb] hover:shadow-lg transition"
               >
-                打开谷歌查询 · Open in Google Maps
+                <img src="/google-maps.png" alt="Google Maps" className="w-8 h-8" />
+                <span className="text-[#7a3727] font-serif text-base">
+                  Google
+                </span>
               </a>
 
               <a
                 href="https://ul.waze.com/ul?place=ChIJr1npfG9s2jERhBLU6DKztWI&ll=1.52385010%2C103.80705860&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#7a3727] underline"
+                className="flex items-center gap-3 px-6 py-3 rounded-full bg-[#e8f4f8] shadow-md border border-[#d6e6ee] hover:shadow-lg transition"
               >
-                打开Waze查询 · Open in Waze
+                <img src="/waze.png" alt="Waze" className="w-8 h-8" />
+                <span className="text-[#5a7d8a] font-serif text-base">
+                  Waze
+                </span>
               </a>
+
             </div>
             </section>
 
-            <section className="bg-[#f6f1ea] px-6 py-24 text-center">
-              <h2 className="text-3xl italic text-[#7a3727]">婚礼流程 · Wedding Time</h2>
-              <div className="relative mx-auto mt-16 max-w-3xl">
-                <div className="absolute bottom-0 left-1/2 top-0 hidden w-[1px] -translate-x-1/2 bg-[#d8c4aa] md:block" />
+            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
+              <h2 className="text-3xl italic text-[#7a3727]">婚礼流程</h2>
+			  <h3 className="text-3xl italic text-[#7a3727]">About Wedding</h3>
+              <div className="mt-12 flex flex-col items-center gap-6 text-[#7a3727]">
 
-                {[
-                  { time: "18:00", text: "📷 签到合影 · Guest Arrival", side: "right" },
-                  { time: "19:00", text: "🥂婚礼晚宴 · Banquet", side: "left" },
-                  { time: "22:00", text: "🎉圆满结束 · Finish", side: "right" },
-                ].map((item, i) => (
-                  <div key={i} className="relative mb-8 md:mb-12">
-                    <div className="mx-auto flex max-w-xl flex-col items-center rounded-2xl border border-[#eadfd4] bg-white/70 p-5 text-center shadow-sm md:hidden">
-                      <p className="text-lg font-medium text-[#7a3727]">{item.time}</p>
-                      <p className="mt-2 text-sm tracking-[0.08em] text-[#8a4a3a]">{item.text}</p>
-                    </div>
+                <div className="text-center">
+                  <p className="text-lg">18:00</p>
+                  <p className="mt-2 text-xl">签到合影</p>
+                  <p className="mt-1 text-base italic">Arrival</p>
+                </div>
 
-                    <div className="relative hidden items-center md:flex">
-                      {item.side === "left" ? (
-                        <>
-                          <div className="w-1/2 pr-8 text-right">
-                            <p className="text-lg font-medium text-[#7a3727]">{item.time}</p>
-                            <p className="mt-1 text-sm uppercase tracking-[0.12em] text-[#8a4a3a]">
-                              {item.text}
-                            </p>
-                          </div>
-                          <div className="z-10 mx-auto h-4 w-4 rounded-full border-2 border-white bg-[#7a3727]" />
-                          <div className="w-1/2" />
-                        </>
-                      ) : (
-                        <>
-                          <div className="w-1/2" />
-                          <div className="z-10 mx-auto h-4 w-4 rounded-full border-2 border-white bg-[#7a3727]" />
-                          <div className="w-1/2 pl-8 text-left">
-                            <p className="text-lg font-medium text-[#7a3727]">{item.time}</p>
-                            <p className="mt-1 text-sm uppercase tracking-[0.12em] text-[#8a4a3a]">
-                              {item.text}
-                            </p>
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                <div className="text-2xl">|</div>
+
+                <div className="text-center">
+                  <p className="text-lg">19:00</p>
+                  <p className="mt-2 text-xl">晚宴</p>
+                  <p className="mt-1 text-base italic">Dinner</p>
+                </div>
+
+                <div className="text-2xl">|</div>
+
+                <div className="text-center">
+                  <p className="text-lg">22:00</p>
+                  <p className="mt-2 text-xl">圆满结束</p>
+                  <p className="mt-1 text-base italic">End</p>
+                </div>
+
               </div>
 
-              <p className="mt-10 italic text-[#7a3727]">
-                请准时出席，晚宴将于 19:00 准时开始。 Please be punctual. Dinner will start at 19:00 sharp.
-              </p>
+               <div className="mt-10 text-center">
+                <p className="text-base text-[#7a3727] tracking-wide">
+                  *敬请<span className="font-semibold underline">7时</span>准时入席
+                </p>
+                <p className="mt-2 text-base italic text-[#7a3727] tracking-wide">
+                  *Dinner begins at <span className="font-semibold underline">19:00</span>
+                </p>
+              </div>
+
             </section>
 
-            <section className="bg-[#f6f1ea] px-6 py-24 text-center">
-              <h2 className="text-4xl font-serif text-[#7a3727]">服装搭配 · Dress Code</h2>
+            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
+              <h2 className="text-4xl font-serif text-[#7a3727]">着装要求</h2>
+			  <h2 className="text-4xl font-serif text-[#7a3727]">Dress Code</h2>
               <div className="mt-10 flex justify-center">
                 <img
                   src="/formal.png"
@@ -444,23 +523,43 @@ export default function WeddingInvitationWebsite() {
                   className="max-w-md w-full"
                 />
               </div>
-              <p className="mt-8 text-base text-[#7a3727]">
-                我们诚邀您盛装出席，与我们一同庆祝这个特别的日子
-              </p>
-              <p className="mt-4 text-base text-[#7a3727]">
-                We invite you to dress elegantly and formally to celebrate this special day with us.
-              </p>
-              <h3 className="mt-8 text-2xl font-serif text-[#7a3727]">正式服装 · Formal attire</h3>
+			  <br />
+              <h3 className="text-3xl italic text-[#7a3727]">正式服装</h3>
+			  <h3 className="text-3xl italic text-[#7a3727]">Formal attire</h3>
               <p className="mt-4 italic text-[#7a3727]">
-                请把白色着装留给新娘。 · Please leave the white to the bride
+                请把白色着装留给新娘<br />Please leave the white to the bride
               </p>
-            </section>
+			  <br />
+			  <h2 className="text-3xl text-[#7a3727]">婚礼色调</h2>
+              <p className="mt-2 text-xl italic text-[#7a3727]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                Wedding Palette
+              </p>
+			  <div className="mt-8 flex justify-center gap-10">
+                <div className="flex flex-col items-center">
+                  <div className="h-5 w-5 rounded-full border-2 border-[#4a0d0d] bg-[#b30000] shadow-inner" />
+                  <p className="mt-2 text-sm text-[#7a3727]">红色 · Red</p>
+                </div>
 
-            <section className="bg-[#f6f1ea] px-6 py-24">
+                <div className="flex flex-col items-center">
+                  <div className="h-5 w-5 rounded-full border-2 border-[#222] bg-[#000000] shadow-inner" />
+                  <p className="mt-2 text-sm text-[#7a3727]">黑色 · Black</p>
+                </div>
+              </div>
+			  
+            </section>
+			
+			
+
+            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24">
               <div className="mx-auto max-w-3xl rounded-[2rem] border border-[#e5d8cb] bg-white/80 p-8 shadow-sm md:p-10">
                 <div className="text-center">
-                  <h2 className="font-serif text-5xl italic text-[#7a3727]">回复出席 · RSVP</h2>
-                  <p className="mt-3 text-base text-[#8a4a3a]">让我们知道您是否能出席我们的婚礼 · Let us know if you can make it</p>
+                  <h2 className="font-serif text-5xl italic text-[#7a3727]">出席回复</h2>
+				  <h2 className="font-serif text-5xl italic text-[#7a3727]">RSVP</h2>
+				  <p className="text-base text-[#7a3727] tracking-wide">
+                  by <span className="font-semibold underline">30th May 2026</span>
+                </p>
+				  <p className="mt-3 text-base text-[#8a4a3a]">让我们知道您是否能出席我们的婚礼</p>
+                  <p className="mt-3 text-base text-[#8a4a3a]">Let us know if you can make it</p>
                 </div>
 
                 <form className="mt-10 space-y-8" onSubmit={(e) => e.preventDefault()}>
@@ -515,7 +614,7 @@ export default function WeddingInvitationWebsite() {
                       </div>
 
                       <div className="rounded-[1.5rem] bg-[#faf7f3] p-5">
-                        <p className="text-base text-[#8a6c4e]">联络人 · Person (Main contact)</p>
+                        <p className="text-base text-[#8a6c4e]">联络人 · Main contact</p>
                         <div className="mt-4 space-y-4">
                           <input value={guestName} onChange={(e) => setGuestName(e.target.value)} placeholder="名字 · Full name" className="w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none" />
                           <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder="电话号码 · Phone Number" className="w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none" />
@@ -532,51 +631,23 @@ export default function WeddingInvitationWebsite() {
                       </div>
 
                       <div>
-                        <p className="text-xl font-serif text-[#6d3122]">新人祝语 · Message for the couple</p>
+                        <p className="text-xl font-serif text-[#6d3122]">新人祝语 · Wishes</p>
                         <textarea value={guestMessage} onChange={(e) => setGuestMessage(e.target.value)} placeholder="祝语 · Your message" className="mt-4 w-full rounded-xl border border-[#eadfd4] bg-[#faf7f3] px-5 py-4" />
-                        <div className="mt-4 flex justify-center">
-                          <button
-                            type="button"
-                            onClick={() => setIsPublicMessage((prev) => !prev)}
-                            className={`rounded-full border px-6 py-2 text-sm transition-all duration-300 ${
-                              isPublicMessage
-                                ? "bg-[#7a3727] text-white shadow-md"
-                                : "bg-white text-[#7a3727] hover:bg-[#f3e8e2]"
-                            }`}
-                          >
-                            {isPublicMessage
-                              ? "✔ 已设为公开祝语 · Public Message"
-                              : "设为公开祝语 · Make my wishes public"}
-                          </button>
-                        </div>
+                       
                       </div>
                     </>
                   ) : (
                     <div>
                       <p className="text-xl font-serif text-[#6d3122]">新人祝语 · Message for the couple</p>
                       <textarea value={guestMessage} onChange={(e) => setGuestMessage(e.target.value)} placeholder="祝语 · Your message" className="mt-4 w-full rounded-xl border border-[#eadfd4] bg-[#faf7f3] px-5 py-4" />
-                        <div className="mt-4 flex justify-center">
-                          <button
-                            type="button"
-                            onClick={() => setIsPublicMessage((prev) => !prev)}
-                            className={`rounded-full border px-6 py-2 text-sm transition-all duration-300 ${
-                              isPublicMessage
-                                ? "bg-[#7a3727] text-white shadow-md"
-                                : "bg-white text-[#7a3727] hover:bg-[#f3e8e2]"
-                            }`}
-                          >
-                            {isPublicMessage
-                              ? "✔ 已设为公开祝语 · Public Message"
-                              : "设为公开祝语 · Make my wishes public"}
-                          </button>
-                        </div>
+                       
                     </div>
                   )}
 
-                  <button type="button" onClick={handleSubmitRSVP} disabled={isSubmitting} className="w-full rounded-2xl bg-[#7a3727] px-6 py-4 text-white uppercase disabled:cursor-not-allowed disabled:opacity-60">{isSubmitting ? "Submitting..." : "提交 . Submit RSVP"}</button>
+                  <button type="button" onClick={handleSubmitRSVP} disabled={isSubmitting} className="w-full rounded-2xl bg-[#7a3727] px-6 py-4 text-white uppercase disabled:cursor-not-allowed disabled:opacity-60">{isSubmitting ? "Submitting..." : "Submit RSVP"}</button>
 
                   {submitStatus === "success" && (
-                    <p className="text-center text-sm text-green-700">我们收到啦！ . We got it !</p>
+                    <p className="text-center text-sm text-green-700">RSVP submitted successfully.</p>
                   )}
 
                   {submitStatus === "error" && (
@@ -586,7 +657,7 @@ export default function WeddingInvitationWebsite() {
               </div>
             </section>
 
-            <section className="border-t border-[#e5d8cb] bg-[#f6f1ea] px-6 py-10 text-center">
+            <section className="border-t border-[#e5d8cb] bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-10 text-center">
               <p className="text-sm uppercase tracking-[0.3em] text-[#8a4a3a] sm:tracking-[0.42em]">
                 百年好合 · 永结同心 · We look forward to celebrating with you
               </p>
