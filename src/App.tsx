@@ -16,7 +16,6 @@ export default function WeddingInvitationWebsite() {
   const [isVegetarian, setIsVegetarian] = useState(false);
   const [isHalal, setIsHalal] = useState(false);
   const [allergyNotes, setAllergyNotes] = useState("");
-  const [isPublicMessage, setIsPublicMessage] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
@@ -106,7 +105,6 @@ export default function WeddingInvitationWebsite() {
       halal: isHalal ? "Yes" : "No",
       allergyNotes,
       guestMessage,
-      publicMessage: isPublicMessage ? "Yes" : "No",
     };
 
     try {
