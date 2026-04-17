@@ -488,7 +488,7 @@ export default function WeddingInvitationWebsite() {
                   ["秒", "SEC", timeLeft.seconds],
                 ].map(([cn, en, value]) => (
                   <div key={en as string} className="flex flex-col items-center">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-xl border border-[#7a3727] text-xl text-[#7a3727]">
+                    <div className="flex h-20 w-20 items-center justify-center text-xl text-[#7a3727]">
                       {String(value).padStart(2, "0")}
                     </div>
                     <div className="mt-2 text-center text-xs tracking-[0.2em] text-[#8a4a3a]">
