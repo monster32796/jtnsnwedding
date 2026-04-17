@@ -18,6 +18,7 @@ export default function WeddingInvitationWebsite() {
   const [allergyNotes, setAllergyNotes] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [showThankYouScreen, setShowThankYouScreen] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -118,7 +119,8 @@ export default function WeddingInvitationWebsite() {
       });
 
       setSubmitStatus("success");
-      alert("RSVP submitted successfully.");
+      setShowThankYouScreen(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
       console.error("RSVP submission failed", error);
       setSubmitStatus("error");
@@ -130,7 +132,7 @@ export default function WeddingInvitationWebsite() {
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#120707] text-[#f7ead7]">
-      <audio ref={audioRef} src="/music.mp3" loop preload="auto" />
+      <audio ref={audioRef} src="/music.mp3" preload="auto" onEnded={() => setIsMusicPlaying(false)} />
 
       <button
         type="button"
@@ -158,7 +160,63 @@ export default function WeddingInvitationWebsite() {
         </span>
       </button>
       <AnimatePresence mode="wait">
-        {!isCurtainOpened ? (
+        {showThankYouScreen ? (
+          <motion.section
+            key="thank-you"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -24 }}
+            transition={{ duration: 0.6 }}
+            className="flex min-h-screen items-center justify-center bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-16 text-[#7a3727]"
+          >
+            <div className="w-full max-w-2xl rounded-[2rem] border border-[#e5d8cb] bg-white/90 p-10 text-center shadow-xl">
+              <p
+                className="text-lg"
+                style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1.6", letterSpacing: "0.04em" }}
+              >
+                感谢您的回复
+              </p>
+              <h2
+                className="mt-3 text-4xl font-serif"
+                style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "0.06em" }}
+              >
+                Thank You
+              </h2>
+              <p
+                className="mt-6 text-base leading-relaxed"
+                style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1.8", letterSpacing: "0.03em" }}
+              >
+                我们已收到您的 RSVP，期待与您共度这美好时刻。
+                <br />
+                We have received your RSVP and look forward to celebrating with you.
+              </p>
+              {guestName && (
+                <p
+                  className="mt-6 text-xl"
+                  style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "0.04em" }}
+                >
+                  Dear {guestName}, see you soon.
+                </p>
+              )}
+              <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <button
+                  type="button"
+                  onClick={() => setShowThankYouScreen(false)}
+                  className="rounded-full border border-[#d7c6b7] px-6 py-3 text-[#7a3727]"
+                >
+                  Back to Invitation
+                </button>
+                <button
+                  type="button"
+                  onClick={() => window.location.reload()}
+                  className="rounded-full bg-[#7a3727] px-6 py-3 text-white"
+                >
+                  Submit Another
+                </button>
+              </div>
+            </div>
+          </motion.section>
+        ) : !isCurtainOpened ? (
           <motion.section
             key="intro"
             initial={{ opacity: 0 }}
@@ -362,7 +420,7 @@ export default function WeddingInvitationWebsite() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="mx-auto mt-12 w-full]"
+                className="mx-auto mt-12 w-full"
               >
                 <div className="mx-auto max-w-[260px] text-[#5e3a31]">
                   <div className="border-y border-[#7a3727]/60 py-3 text-center">
@@ -385,15 +443,36 @@ export default function WeddingInvitationWebsite() {
                       <span key={date} style={{ fontFamily: "'Playfair Display', serif" }}>{date}</span>
                     ))}
 
-                    <motion.span
+                    <motion.div
                       initial={{ scale: 0.9, opacity: 0.7 }}
-                      animate={{ scale: [1, 1.08, 1], opacity: [0.85, 1, 0.85] }}
+                      animate={{ scale: [1, 1.04, 1], opacity: [0.9, 1, 0.9] }}
                       transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-                      className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#9b6b5b] text-[#7a3727]"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
+                      className="mx-auto relative flex h-12 w-12 items-center justify-center"
                     >
-                      19
-                    </motion.span>
+                      <svg viewBox="0 0 40 36" className="absolute inset-0 h-full w-full overflow-visible" style={{ filter: "drop-shadow(0 0 4px rgba(155,107,91,0.18))" }}>
+                        <path
+                          d="M20 33
+                             C 18 31, 5 20, 5 11
+                             C 5 5.8, 8.8 2.5, 13.4 2.5
+                             C 16.4 2.5, 18.8 4, 20 6.4
+                             C 21.2 4, 23.6 2.5, 26.6 2.5
+                             C 31.2 2.5, 35 5.8, 35 11
+                             C 35 20, 22 31, 20 33 Z"
+                          fill="none"
+                          stroke="#9b6b5b"
+                          strokeWidth="1.8"
+                          strokeLinejoin="round"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+
+                      <span
+                        className="relative z-10 text-[#7a3727] text-sm"
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                      >
+                        19
+                      </span>
+                    </motion.div>
 
                     <span style={{ fontFamily: "'Playfair Display', serif" }}>20</span>
                   </div>
