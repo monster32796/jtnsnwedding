@@ -480,7 +480,7 @@ export default function WeddingInvitationWebsite() {
               </motion.div>
                 </p>
               </div>
-			  <div className="mt-10 flex flex-wrap justify-center gap-6">
+			  <div className="mt-10 flex flex-wrap justify-center">
                 {[
                   ["天", "DAYS", timeLeft.days],
                   ["时", "HOURS", timeLeft.hours],
