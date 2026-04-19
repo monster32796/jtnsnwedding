@@ -24,8 +24,7 @@ type Dictionary = {
   introBody1: string;
   introBody2: string;
   scroll: string;
-  saveDateCn: string;
-  saveDateEn: string;
+  saveDate: string;
   dateCn: string;
   dateEn: string;
   venueCn: string;
@@ -94,7 +93,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     introBody1: "您的到来，将让这份喜悦更加圆满。",
     introBody2: "期待与您共享这美好时刻。",
     scroll: "下滑",
-    saveDateCn: "预留此日",
+    saveDate: "预留此日",
     dateCn: "2026年9月19日",
     venueCn: "婚礼地点",
     venuePlaceCn: "北京楼柔佛再也 · 2号厅",
@@ -154,7 +153,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     introBody1: "Your presence will only extend the joy and the smiles on our face.",
     introBody2: "We cannot afford to miss the pleasure of your presence at our wedding.",
     scroll: "Scroll",
-    saveDateEn: "Save the Date",
+    saveDate: "Save the Date",
     dateEn: "19th September 2026",
     venueEn: "Venue",
     venuePlaceEn: "Restaurant Pekin Johor Jaya · Hall 2",
@@ -386,7 +385,6 @@ export default function WeddingInvitationWebsite() {
                 <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.7 }} className="text-sm text-[#7a3727] sm:text-base md:text-lg" style={{ lineHeight: "1.6", letterSpacing: "0.08em", fontFamily: "'Noto Serif SC', serif" }}>
                   {t.introTop1}
                   <br />
-                  <span style={{ fontFamily: "'Playfair Display', serif" }}>{t.introTop2}</span>
                 </motion.p>
 
                 <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }} className="mt-8 text-4xl text-[#7a3727] sm:text-5xl md:text-6xl lg:text-7xl" style={{ fontFamily: "'Noto Serif SC', serif", letterSpacing: "0.08em", lineHeight: "1.1" }}>
@@ -419,7 +417,7 @@ export default function WeddingInvitationWebsite() {
               <div className="mx-auto max-w-4xl">
                 <img src="/wedding.JPG" alt="Wedding-picture" className="w-full max-w-lg mx-auto rounded-[2rem] shadow-lg" />
                 <p className="mt-10 text-2xl" style={{ fontFamily: language === "en" ? "'Playfair Display', serif" : "'Noto Serif SC', serif" }}>
-				{language === "en" ? t.saveDateEn : t.saveDateCn}
+				{t.saveDate}
 				<br />
 				<span className="block mt-6 text-3xl sm:text-4xl font-semibold">
 				{t.dateCn}
@@ -464,8 +462,6 @@ export default function WeddingInvitationWebsite() {
                   </div>
                 ))}
               </div>
-              <p className="mt-10 text-2xl" style={{ fontFamily: language === "en" ? "'Playfair Display', serif" : "'Noto Serif SC', serif" }}>{t.countdownCn}</p>
-              <span className="text-xl" style={{ fontFamily: language === "en" ? "'Noto Serif SC', serif" : "'Playfair Display', serif" }}>{t.countdownEn}</span>
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
@@ -490,7 +486,6 @@ export default function WeddingInvitationWebsite() {
                   <div key={item.time} className="text-center">
                     <p className="text-lg">{item.time}</p>
                     <p className="mt-2 text-xl">{item.ac}</p>
-                    <p className="mt-1 text-base italic">{item.en}</p>
                     {idx < t.timeline.length - 1 && <div className="text-2xl mt-4">|</div>}
                   </div>
                 ))}
