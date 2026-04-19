@@ -442,7 +442,7 @@ export default function WeddingInvitationWebsite() {
                   [labelD, timeLeft.seconds],
                 ].map(([label, value]) => (
                   <div key={String(label)} className="flex flex-col items-center">
-                    <div className="flex h-20 w-20 items-center justify-center gap-1 text-xl text-[#7a3727]">{String(value).padStart(2, "0")}</div>
+                    <div className="flex h-10 w-10 items-center justify-center text-xl text-[#7a3727]">{String(value).padStart(2, "0")}</div>
                     <div className="mt-2 text-center text-xs tracking-[0.2em] text-[#8a4a3a]">{label}</div>
                   </div>
                 ))}
