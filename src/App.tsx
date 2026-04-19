@@ -409,10 +409,10 @@ export default function WeddingInvitationWebsite() {
               <div className="mx-auto max-w-4xl">
                 <img src="/wedding.JPG" alt="Wedding-picture" className="w-full max-w-lg mx-auto rounded-[2rem] shadow-lg" />
                 <p className="mt-10 text-2xl" style={{ fontFamily }}>
-                  {language === "en" ? t.saveDateEn : t.saveDateCn}
+                  {t.saveDate}
                   <br />
                   <span className="block mt-6 text-3xl sm:text-4xl font-semibold">
-                    {language === "en" ? t.dateEn : t.dateCn}
+                    {t.date}
                   </span>
                 </p>
 
@@ -497,24 +497,24 @@ export default function WeddingInvitationWebsite() {
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-4xl">{t.venue}</h2>
-              <p className="mt-6 text-2xl">{t.venuePlace}</p>
+              <h2 className="text-4xl" style={{ fontFamily }}>{t.venue}</h2>
+              <p className="mt-6 text-2xl" style={{ fontFamily }}>{t.venuePlace}</p>
               <div className="mt-10 overflow-hidden rounded-2xl border border-[#e5d8cb] shadow-sm">
                 <iframe src="https://www.google.com/maps?q=Restaurant+Pekin+Johor+Jaya&output=embed" width="100%" height="400" style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
               </div>
               <div className="mt-6 flex flex-col items-center gap-3">
-                <a href="https://share.google/9RL9lEQIqXmD6aTnx" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 rounded-full bg-white shadow-md border border-[#e5d8cb] hover:shadow-lg transition"><img src="/google-maps.png" alt="Google Maps" className="w-8 h-8" /><span className="text-[#7a3727] font-serif text-base">Google</span></a>
-                <a href="https://ul.waze.com/ul?place=ChIJr1npfG9s2jERhBLU6DKztWI&ll=1.52385010%2C103.80705860&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 rounded-full bg-[#e8f4f8] shadow-md border border-[#d6e6ee] hover:shadow-lg transition"><img src="/waze.png" alt="Waze" className="w-8 h-8" /><span className="text-[#5a7d8a] font-serif text-base">Waze</span></a>
+                <a href="https://share.google/9RL9lEQIqXmD6aTnx" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 rounded-full bg-white shadow-md border border-[#e5d8cb] hover:shadow-lg transition"><img src="/google-maps.png" alt="Google Maps" className="w-8 h-8" /><span className="text-[#7a3727] font-serif text-base" style={{ fontFamily }}>Google</span></a>
+                <a href="https://ul.waze.com/ul?place=ChIJr1npfG9s2jERhBLU6DKztWI&ll=1.52385010%2C103.80705860&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 rounded-full bg-[#e8f4f8] shadow-md border border-[#d6e6ee] hover:shadow-lg transition"><img src="/waze.png" alt="Waze" className="w-8 h-8" /><span className="text-[#5a7d8a] font-serif text-base" style={{ fontFamily }}>Waze</span></a>
               </div>
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-4xl">{t.programme}</h2>
+              <h2 className="text-4xl" style={{ fontFamily }}>{t.programme}</h2>
               <div className="mt-6 text-2xl flex flex-col items-center gap-6 text-[#7a3727]">
                 {t.timeline.map((item, idx) => (
-                  <div key={item.time} className="text-center">
-                    <p className="text-lg">{item.time}</p>
-                    <p className="mt-2 text-xl">{item.ac}</p>
+                  <div key={item.time} className="text-center" >
+                    <p className="text-lg" style={{ fontFamily }}>{item.time}</p>
+                    <p className="mt-2 text-xl" style={{ fontFamily }}>{item.ac}</p>
                     {idx < t.timeline.length - 1 && <div className="text-2xl mt-4">|</div>}
                   </div>
                 ))}
@@ -524,20 +524,20 @@ export default function WeddingInvitationWebsite() {
               </div>
             </section>
 
-            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-4xl font-serif text-[#7a3727]">{t.dress}</h2>
+            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center style={{ fontFamily }}">
+              <h2 className="text-4xl font-serif text-[#7a3727]  ">{t.dress}</h2>
               <div className="mt-10 flex justify-center"><img src="/formal.png" alt="Dress Code" className="max-w-md w-full" /></div>
-              <p className="mt-8 text-2xl">{t.formal}</p>
-              <p className="mt-4">{t.leaveWhite}<br /></p>
+              <p className="mt-8 text-2xl style={{ fontFamily }}">{t.formal}</p>
+              <p className="mt-4 style={{ fontFamily }}">{t.leaveWhite}<br /></p>
               <br />
-              <p className="mt-8 text-2xl">{t.palette}</p>
+              <p className="mt-8 text-2xl style={{ fontFamily }}">{t.palette}</p>
               <div className="mt-8 flex justify-center gap-10">
-                <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#4a0d0d] bg-[#b30000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727]">{t.redLabel}</p></div>
-                <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#222] bg-[#000000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727]">{t.blackLabel}</p></div>
+                <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#4a0d0d] bg-[#b30000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727] style={{ fontFamily }}">{t.redLabel}</p></div>
+                <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#222] bg-[#000000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727] style={{ fontFamily }}">{t.blackLabel}</p></div>
               </div>
             </section>
 
-            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24">
+            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 style={{ fontFamily }}">
               <div className="mx-auto max-w-3xl rounded-[2rem] border border-[#e5d8cb] bg-white/80 p-8 shadow-sm md:p-10">
                 <div className="text-center">
                   <h2 className="text-4xl">{t.rsvp}</h2>
@@ -603,8 +603,8 @@ export default function WeddingInvitationWebsite() {
               </div>
             </section>
 
-            <section className="border-t border-[#e5d8cb] bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-10 text-center">
-              <p className="text-sm uppercase tracking-[0.3em] text-[#8a4a3a] sm:tracking-[0.42em]">{t.footer}</p>
+            <section className="border-t border-[#e5d8cb] bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-10 text-center ">
+              <p className="text-sm uppercase tracking-[0.3em] text-[#8a4a3a] sm:tracking-[0.42em] style={{ fontFamily }}">{t.footer}</p>
             </section>
           </motion.main>
         )}
