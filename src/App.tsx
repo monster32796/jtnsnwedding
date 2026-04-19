@@ -110,7 +110,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     contact: "联络人",
     fullName: "名字",
     phone: "电话号码",
-    dietary: "饮食要求",
+    dietary: "饮食习惯",
     vegetarian: "素食",
     halal: "清真",
     allergy: "过敏史或备注",
@@ -187,7 +187,6 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
 export default function WeddingInvitationWebsite() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isCurtainOpened, setIsCurtainOpened] = useState(false);
-  const [language, setLanguage] = useState<Language>(null);
   const [isCurtainOpening, setIsCurtainOpening] = useState(false);
   const RSVP_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxAA__B0KP3g5ZBNhU_xmMzYX2ZsNm_jSRdt1QaLBomT0QoxBajMRR1ek4B6HTbwawDnw/exec";
 
@@ -204,8 +203,12 @@ export default function WeddingInvitationWebsite() {
   const [showThankYouScreen, setShowThankYouScreen] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [language, setLanguage] = useState<Language>(null);
 
   const t = language ? TEXT[language] : TEXT.cn;
+  const fontFamily = language === "en"
+    ? "'Playfair Display', serif"
+    : "'Noto Serif SC', serif";
 
   const openInvitation = () => {
     if (isCurtainOpening || isCurtainOpened) return;
@@ -450,8 +453,8 @@ export default function WeddingInvitationWebsite() {
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-3xl">{t.venue}</h2>
-              <h3 className="mt-6 text-3xl font-serif text-[#7a3727]">{t.venuePlace}</h3>
+              <h2 className="text-4xl">{t.venue}</h2>
+              <p className="mt-6 text-2xl">{t.venuePlace}</p>
               <div className="mt-10 overflow-hidden rounded-2xl border border-[#e5d8cb] shadow-sm">
                 <iframe src="https://www.google.com/maps?q=Restaurant+Pekin+Johor+Jaya&output=embed" width="100%" height="400" style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
               </div>
@@ -462,8 +465,8 @@ export default function WeddingInvitationWebsite() {
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-3xl">{t.programme}</h2>
-              <div className="mt-12 flex flex-col items-center gap-6 text-[#7a3727]">
+              <h2 className="text-4xl">{t.programme}</h2>
+              <div className="mt-6 text-2xl flex flex-col items-center gap-6 text-[#7a3727]">
                 {t.timeline.map((item, idx) => (
                   <div key={item.time} className="text-center">
                     <p className="text-lg">{item.time}</p>
@@ -473,17 +476,17 @@ export default function WeddingInvitationWebsite() {
                 ))}
               </div>
               <div className="mt-10 text-center">
-                <p className="text-base text-[#7a3727] tracking-wide">{t.punctual}</p>
+                <p className="mt-6 text-2xl">{t.punctual}</p>
               </div>
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
               <h2 className="text-4xl font-serif text-[#7a3727]">{t.dress}</h2>
               <div className="mt-10 flex justify-center"><img src="/formal.png" alt="Dress Code" className="max-w-md w-full" /></div>
-              <h3 className="mt-8 text-3xl">{t.formal}</h3>
+              <p className="mt-8 text-2xl">{t.formal}</p>
               <p className="mt-4">{t.leaveWhite}<br /></p>
               <br />
-              <h2 className="text-3xl text-[#7a3727]">{t.palette}</h2>
+              <p className="mt-8 text-2xl">{t.palette}</p>
               <div className="mt-8 flex justify-center gap-10">
                 <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#4a0d0d] bg-[#b30000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727]">{t.redLabel}</p></div>
                 <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#222] bg-[#000000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727]">{t.blackLabel}</p></div>
@@ -493,8 +496,8 @@ export default function WeddingInvitationWebsite() {
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24">
               <div className="mx-auto max-w-3xl rounded-[2rem] border border-[#e5d8cb] bg-white/80 p-8 shadow-sm md:p-10">
                 <div className="text-center">
-                  <h2 className="text-3xl">{t.rsvp}</h2>
-                  <p className="text-base text-[#7a3727] tracking-wide mt-3">{t.rsvpBy}</p>
+                  <h2 className="text-4xl">{t.rsvp}</h2>
+                  <p className="mt-4">{t.rsvpBy}</p>
                   <p className="mt-3 text-base text-[#8a4a3a]">{t.rsvpLead}</p>
                 </div>
 
