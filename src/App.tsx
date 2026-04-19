@@ -180,7 +180,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     submitting: "Submitting...",
     success: "RSVP submitted successfully.",
     error: "Submission failed. Please try again.",
-    footer: "Thank you for witnessing our special moment.",
+    footer: "Thank you for witnessing our special moment",
   },
 };
 
