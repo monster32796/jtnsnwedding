@@ -120,7 +120,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     submitting: "提交中...",
     success: "我们收到啦！",
     error: "提交失败，请再试一次。",
-    footer: "百年好合 · 永结同心",
+    footer: "期待 • 婚礼相见",
   },
   en: {
     musicPlay: "Play Music",
@@ -180,7 +180,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     submitting: "Submitting...",
     success: "RSVP submitted successfully.",
     error: "Submission failed. Please try again.",
-    footer: "We look forward to celebrating with you",
+    footer: "Thank you for witnessing our special moment.",
   },
 };
 
