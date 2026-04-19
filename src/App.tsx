@@ -37,7 +37,7 @@ type Dictionary = {
   venuePlaceEn: string;
   programmeCn: string;
   programmeEn: string;
-  timeline: Array<{ time: string; cn: string; en: string }>;
+  timeline: Array<{ time: string; ac: string }>;
   punctualCn: string;
   punctualEn: string;
   dressCn: string;
@@ -104,9 +104,9 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     venuePlaceCn: "北京楼柔佛再也 · 2号厅",
     programmeCn: "婚礼流程",
     timeline: [
-      { time: "18:00", cn: "签到合影", en: "Arrival" },
-      { time: "19:00", cn: "晚宴", en: "Dinner" },
-      { time: "22:00", cn: "圆满结束", en: "End" },
+      { time: "18:00", ac: "签到合影"},
+      { time: "19:00", ac: "晚宴"},
+      { time: "22:00", ac: "圆满结束"},
     ],
     punctualCn: "*敬请7时准时入席",
     dressCn: "着装要求",
@@ -164,9 +164,9 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     venuePlaceEn: "Restaurant Pekin Johor Jaya · Hall 2",
     programmeEn: "About Wedding",
     timeline: [
-      { time: "18:00", en: "Arrival"},
-      { time: "19:00", en: "Dinner"},
-      { time: "22:00", en: "End"},
+      { time: "18:00", ac: "Arrival"},
+      { time: "19:00", ac: "Dinner"},
+      { time: "22:00", ac: "End"},
     ],
     punctualEn: "*Dinner begins at 19:00",
     dressEn: "Dress Code",
@@ -493,7 +493,7 @@ export default function WeddingInvitationWebsite() {
                 {t.timeline.map((item, idx) => (
                   <div key={item.time} className="text-center">
                     <p className="text-lg">{item.time}</p>
-                    <p className="mt-2 text-xl">{item.cn}</p>
+                    <p className="mt-2 text-xl">{item.ac}</p>
                     <p className="mt-1 text-base italic">{item.en}</p>
                     {idx < t.timeline.length - 1 && <div className="text-2xl mt-4">|</div>}
                   </div>
