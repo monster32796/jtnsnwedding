@@ -331,7 +331,7 @@ export default function WeddingInvitationWebsite() {
             <div className="w-full max-w-2xl rounded-[2rem] border border-[#e5d8cb] bg-white/90 p-10 text-center shadow-xl">
               <p className="text-lg" style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1.6", letterSpacing: "0.04em" }}>{t.thankYouTitle}</p>
               <p className="mt-6 text-base leading-relaxed" style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1.8", letterSpacing: "0.03em" }}>{t.thankYouBody}</p>
-              {guestName && <p className="mt-6 text-xl" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "0.04em" }}>{language === "en" ? `${guestName}, see you soon.` : `${guestName}，到时见。`}</p>}
+              {guestName && <p className="mt-6 text-xl" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "0.04em" }}>{language === "en" ? `${guestName}, see you there.` : `${guestName}，婚礼见。`}</p>}
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <button type="button" onClick={() => setShowThankYouScreen(false)} className="rounded-full border border-[#d7c6b7] px-6 py-3 text-[#7a3727]">{t.thankYouBack}</button>
                 <button type="button" onClick={() => window.location.reload()} className="rounded-full bg-[#7a3727] px-6 py-3 text-white">{t.thankYouAnother}</button>
