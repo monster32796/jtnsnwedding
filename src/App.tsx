@@ -408,11 +408,7 @@ export default function WeddingInvitationWebsite() {
                 <p className="mt-10 text-2xl" style={{ fontFamily: language === "en" ? "'Playfair Display', serif" : "'Noto Serif SC', serif" }}>
 				{t.saveDate}
 				<br />
-				<span className="block mt-6 text-3xl sm:text-4xl font-semibold">
-				{t.date}
-				</span>
-				<span
-				className="block mt-2 text-2xl sm:text-3xl" style={{ fontFamily: "'Playfair Display', serif" }}>
+				<span className="block mt-6 text-3xl sm:text-4xl font-semibold" style={{ fontFamily: language === "en" ? "'Playfair Display', serif" : "'Noto Serif SC', serif" }}>
 				{t.date}
 				</span>
 				</p>
@@ -446,7 +442,7 @@ export default function WeddingInvitationWebsite() {
                   [labelD, timeLeft.seconds],
                 ].map(([label, value]) => (
                   <div key={String(label)} className="flex flex-col items-center">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-xl border border-[#7a3727] text-xl text-[#7a3727]">{String(value).padStart(2, "0")}</div>
+                    <div className="flex h-20 w-20 items-center justify-center gap-1 text-xl text-[#7a3727]">{String(value).padStart(2, "0")}</div>
                     <div className="mt-2 text-center text-xs tracking-[0.2em] text-[#8a4a3a]">{label}</div>
                   </div>
                 ))}
@@ -466,7 +462,7 @@ export default function WeddingInvitationWebsite() {
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-3xl italic text-[#7a3727]">{t.programme}</h2>
+              <h2 className="text-3xl">{t.programme}</h2>
               <div className="mt-12 flex flex-col items-center gap-6 text-[#7a3727]">
                 {t.timeline.map((item, idx) => (
                   <div key={item.time} className="text-center">
@@ -484,8 +480,8 @@ export default function WeddingInvitationWebsite() {
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
               <h2 className="text-4xl font-serif text-[#7a3727]">{t.dress}</h2>
               <div className="mt-10 flex justify-center"><img src="/formal.png" alt="Dress Code" className="max-w-md w-full" /></div>
-              <h3 className="mt-8 text-3xl italic text-[#7a3727]">{t.formal}</h3>
-              <p className="mt-4 italic text-[#7a3727]">{t.leaveWhite}<br /></p>
+              <h3 className="mt-8 text-3xl">{t.formal}</h3>
+              <p className="mt-4">{t.leaveWhite}<br /></p>
               <br />
               <h2 className="text-3xl text-[#7a3727]">{t.palette}</h2>
               <div className="mt-8 flex justify-center gap-10">
@@ -497,7 +493,7 @@ export default function WeddingInvitationWebsite() {
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24">
               <div className="mx-auto max-w-3xl rounded-[2rem] border border-[#e5d8cb] bg-white/80 p-8 shadow-sm md:p-10">
                 <div className="text-center">
-                  <h2 className="font-serif text-5xl italic text-[#7a3727]">{t.rsvp}</h2>
+                  <h2 className="text-3xl">{t.rsvp}</h2>
                   <p className="text-base text-[#7a3727] tracking-wide mt-3">{t.rsvpBy}</p>
                   <p className="mt-3 text-base text-[#8a4a3a]">{t.rsvpLead}</p>
                 </div>
