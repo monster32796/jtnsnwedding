@@ -17,7 +17,6 @@ type Dictionary = {
   languageCn: string;
   languageEn: string;
   introTop1: string;
-  introTop2: string;
   groomCn: string;
   groomEn: string;
   brideCn: string;
@@ -29,8 +28,6 @@ type Dictionary = {
   saveDateEn: string;
   dateCn: string;
   dateEn: string;
-  countdownCn: string;
-  countdownEn: string;
   venueCn: string;
   venueEn: string;
   venuePlaceCn: string;
@@ -78,14 +75,14 @@ type Dictionary = {
 
 const TEXT: Record<Exclude<Language, null>, Dictionary> = {
   cn: {
-    musicPlay: "播放音乐 · Play Music",
-    musicStop: "暂停音乐 · Stop Music",
+    musicPlay: "播放音乐",
+    musicStop: "暂停音乐",
     thankYouTitle: "感谢您的回复",
     thankYouBody: "我们已收到您的回复，期待与您共度这美好时刻。",
     thankYouBack: "返回请帖",
     thankYouAnother: "再提交一次",
-    tapToContinue: "点击惊喜",
-    opening: "打开中...",
+    tapToContinue: "点击惊喜 . Tap to continue",
+    opening: "打开中... Opening...",
     selectLanguage: "请选择语言 · Select Language",
     languageCn: "中文",
     languageEn: "English",
@@ -99,7 +96,6 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     scroll: "下滑",
     saveDateCn: "预留此日",
     dateCn: "2026年9月19日",
-    $dateEn: "19th September 2026",
     venueCn: "婚礼地点",
     venuePlaceCn: "北京楼柔佛再也 · 2号厅",
     programmeCn: "婚礼流程",
@@ -145,8 +141,8 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     thankYouBody: "We have received your RSVP and look forward to celebrating with you.",
     thankYouBack: "Back to Invitation",
     thankYouAnother: "Submit Another",
-    tapToContinue: "Tap to continue",
-    opening: "Opening...",
+    tapToContinue: "点击惊喜 . Tap to continue",
+    opening: "打开中... Opening...",
     selectLanguage: "Select Language · 请选择语言",
     languageCn: "中文",
     languageEn: "English",
