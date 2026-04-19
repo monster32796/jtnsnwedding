@@ -170,7 +170,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     contact: "Main contact",
     fullName: "Full name",
     phone: "Phone Number",
-    dietary: "Dietary requirements",
+    dietary: "Dietary",
     vegetarian: "Vegetarian",
     halal: "Halal",
     allergy: "Allergies or notes",
