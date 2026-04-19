@@ -405,35 +405,79 @@ export default function WeddingInvitationWebsite() {
               </div>
             </section>
 
-            <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
+  <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
               <div className="mx-auto max-w-4xl">
                 <img src="/wedding.JPG" alt="Wedding-picture" className="w-full max-w-lg mx-auto rounded-[2rem] shadow-lg" />
-                <p className="mt-10 text-2xl" style={{ fontFamily: language === "en" ? "'Playfair Display', serif" : "'Noto Serif SC', serif" }}>
-				{t.saveDate}
-				<br />
-				<span className="block mt-6 text-3xl sm:text-4xl font-semibold" style={{ fontFamily: language === "en" ? "'Playfair Display', serif" : "'Noto Serif SC', serif" }}>
-				{t.date}
-				</span>
-				</p>
-                <motion.div initial={{ opacity: 0, y: 24, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="mx-auto mt-12 w-full">
-                  <div className="mx-auto max-w-[260px] text-[#5e3a31]">
-                    <div className="border-y border-[#7a3727]/60 py-3 text-center">
-                      <p className="text-[15px] uppercase tracking-[0.35em]" style={{ fontFamily: "'Playfair Display', serif" }}>September&nbsp;&nbsp;&nbsp;2026</p>
+                <p className="mt-10 text-2xl" style={{ fontFamily }}>
+                  {language === "en" ? t.saveDateEn : t.saveDateCn}
+                  <br />
+                  <span className="block mt-6 text-3xl sm:text-4xl font-semibold">
+                    {language === "en" ? t.dateEn : t.dateCn}
+                  </span>
+                </p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  className="mx-auto mt-12 w-full"
+                >
+                  {language === "cn" ? (
+                    <div className="mx-auto max-w-4xl rounded-[2rem] border border-[#d8c5b4] bg-[#f8f1e8] p-4 shadow-[0_16px_50px_rgba(122,55,39,0.08)] sm:p-6">
+                      <div className="rounded-[1.5rem] border border-[#be8f72] bg-[radial-gradient(rgba(122,55,39,0.03)_1px,transparent_1px)] bg-[size:10px_10px] p-4 text-[#8f2f1d] sm:p-6">
+                        <div className="flex items-center gap-4 text-[#a55a45]">
+                          <div className="h-px flex-1 bg-[#b97d67]" />
+                          <div className="text-xl tracking-[0.25em]">良辰已定・佳偶天成</div>
+                          <div className="h-px flex-1 bg-[#b97d67]" />
+                        </div>
+
+                        <div className="relative mt-6 rounded-[1.5rem] border border-[#be8f72] bg-[#fbf6f0] px-4 pb-5 pt-12 sm:px-6">
+                         
+                          <div className="grid grid-cols-[72px_1fr_72px] gap-3 sm:grid-cols-[110px_1fr_110px] sm:gap-5">
+                            <div className="flex flex-col justify-between rounded-[1rem] border border-[#d2b29f] bg-[#fffaf5] p-3 text-center">
+                              <div className="rounded-full bg-[#a13d29] px-3 py-1 text-sm text-white">宜</div>
+                              <div className="py-3 text-2xl leading-[1.5] tracking-[0.25em] sm:text-3xl">嫁娶<br />成双</div>
+                              <div className="border-t border-[#ead8cb] pt-3 text-lg leading-[1.8] tracking-[0.2em] sm:text-xl">心心相印</div>
+                            </div>
+
+                            <div className="rounded-[1rem] border border-[#d2b29f] bg-[linear-gradient(180deg,#fffdf9_0%,#fbf4ed_100%)] px-4 py-5 text-center">
+                              <p className="text-xl tracking-[0.16em] sm:text-2xl">2026年9月19日 ・ 星期六</p>
+				  <p className="text-xl tracking-[0.16em] sm:text-2xl">农历八月初九</p>
+                              <div className="mt-5 text-5xl tracking-[0.22em] text-[#9d341e] sm:text-7xl">结 婚</div>
+                              <p className="mt-6 text-2xl leading-[1.8] tracking-[0.2em] sm:text-3xl">心心相印<br />白首不离</p>
+
+                            </div>
+
+                            <div className="flex flex-col justify-between rounded-[1rem] border border-[#d2b29f] bg-[#fffaf5] p-3 text-center">
+                              <div className="rounded-full bg-[#a13d29] px-3 py-1 text-sm text-white">宜</div>
+                              <div className="py-3 text-2xl leading-[1.5] tracking-[0.25em] sm:text-3xl">喜乐<br />百年</div>
+                              <div className="border-t border-[#ead8cb] pt-3 text-lg leading-[1.8] tracking-[0.2em] sm:text-xl">琴瑟和鸣</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="mt-4 grid grid-cols-7 text-center text-[11px] uppercase tracking-[0.12em] text-[#6f4a3f]">
-                      {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => <span key={day}>{day}</span>)}
+                  ) : (
+                    <div className="mx-auto max-w-[260px] text-[#5e3a31]">
+                      <div className="border-y border-[#7a3727]/60 py-3 text-center">
+                        <p className="text-[15px] uppercase tracking-[0.35em]" style={{ fontFamily }}>September&nbsp;&nbsp;&nbsp;2026</p>
+                      </div>
+                      <div className="mt-4 grid grid-cols-7 text-center text-[11px] uppercase tracking-[0.12em] text-[#6f4a3f]">
+                        {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => <span key={day}>{day}</span>)}
+                      </div>
+                      <div className="mt-3 grid grid-cols-7 items-center text-center text-lg">
+                        {[14, 15, 16, 17, 18].map((date) => <span key={date} style={{ fontFamily }}>{date}</span>)}
+                        <motion.div initial={{ scale: 0.9, opacity: 0.7 }} animate={{ scale: [1, 1.04, 1], opacity: [0.9, 1, 0.9] }} transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }} className="mx-auto relative flex h-12 w-12 items-center justify-center">
+                          <svg viewBox="0 0 40 36" className="absolute inset-0 h-full w-full overflow-visible" style={{ filter: "drop-shadow(0 0 4px rgba(155,107,91,0.18))" }}>
+                            <path d="M20 33 C 18 31, 5 20, 5 11 C 5 5.8, 8.8 2.5, 13.4 2.5 C 16.4 2.5, 18.8 4, 20 6.4 C 21.2 4, 23.6 2.5, 26.6 2.5 C 31.2 2.5, 35 5.8, 35 11 C 35 20, 22 31, 20 33 Z" fill="none" stroke="#9b6b5b" strokeWidth="1.8" strokeLinejoin="round" strokeLinecap="round" />
+                          </svg>
+                          <span className="relative z-10 text-[#7a3727] text-sm" style={{ fontFamily }}>19</span>
+                        </motion.div>
+                        <span style={{ fontFamily }}>20</span>
+                      </div>
                     </div>
-                    <div className="mt-3 grid grid-cols-7 items-center text-center text-lg">
-                      {[14, 15, 16, 17, 18].map((date) => <span key={date} style={{ fontFamily: "'Playfair Display', serif" }}>{date}</span>)}
-                      <motion.div initial={{ scale: 0.9, opacity: 0.7 }} animate={{ scale: [1, 1.04, 1], opacity: [0.9, 1, 0.9] }} transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }} className="mx-auto relative flex h-12 w-12 items-center justify-center">
-                        <svg viewBox="0 0 40 36" className="absolute inset-0 h-full w-full overflow-visible" style={{ filter: "drop-shadow(0 0 4px rgba(155,107,91,0.18))" }}>
-                          <path d="M20 33 C 18 31, 5 20, 5 11 C 5 5.8, 8.8 2.5, 13.4 2.5 C 16.4 2.5, 18.8 4, 20 6.4 C 21.2 4, 23.6 2.5, 26.6 2.5 C 31.2 2.5, 35 5.8, 35 11 C 35 20, 22 31, 20 33 Z" fill="none" stroke="#9b6b5b" strokeWidth="1.8" strokeLinejoin="round" strokeLinecap="round" />
-                        </svg>
-                        <span className="relative z-10 text-[#7a3727] text-sm" style={{ fontFamily: "'Playfair Display', serif" }}>19</span>
-                      </motion.div>
-                      <span style={{ fontFamily: "'Playfair Display', serif" }}>20</span>
-                    </div>
-                  </div>
+                  )}
                 </motion.div>
               </div>
 
