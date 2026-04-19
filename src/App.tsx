@@ -25,32 +25,22 @@ type Dictionary = {
   introBody2: string;
   scroll: string;
   saveDate: string;
-  dateCn: string;
-  dateEn: string;
-  venueCn: string;
-  venueEn: string;
-  venuePlaceCn: string;
-  venuePlaceEn: string;
-  programmeCn: string;
-  programmeEn: string;
+  date: string;
+  venue: string;
+  venuePlace: string;
+  programme: string;
   timeline: Array<{ time: string; ac: string }>;
-  punctualCn: string;
-  punctualEn: string;
-  dressCn: string;
-  dressEn: string;
-  formalCn: string;
-  formalEn: string;
-  leaveWhiteCn: string;
-  leaveWhiteEn: string;
-  paletteCn: string;
-  paletteEn: string;
+  punctual: string;
+  dress: string;
+  formal: string;
+  leaveWhite: string;
+  palette: string;
   redLabel: string;
   blackLabel: string;
   rsvpCn: string;
   rsvpEn: string;
   rsvpBy: string;
-  rsvpLeadCn: string;
-  rsvpLeadEn: string;
+  rsvpLead: string;
   attending: string;
   yes: string;
   no: string;
@@ -94,25 +84,25 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     introBody2: "期待与您共享这美好时刻。",
     scroll: "下滑",
     saveDate: "预留此日",
-    dateCn: "2026年9月19日",
-    venueCn: "婚礼地点",
-    venuePlaceCn: "北京楼柔佛再也 · 2号厅",
-    programmeCn: "婚礼流程",
+    date: "2026年9月19日",
+    venue: "婚礼地点",
+    venuePlace: "北京楼柔佛再也 · 2号厅",
+    programme: "婚礼流程",
     timeline: [
       { time: "18:00", ac: "签到合影"},
       { time: "19:00", ac: "晚宴"},
       { time: "22:00", ac: "圆满结束"},
     ],
-    punctualCn: "*敬请7时准时入席",
-    dressCn: "着装要求",
-    formalCn: "休闲正装",
-    leaveWhiteCn: "请把白色着装留给新娘",
-    paletteCn: "婚礼色调",
+    punctual: "*敬请7时准时入席",
+    dress: "着装要求",
+    formal: "休闲正装",
+    leaveWhite: "请把白色着装留给新娘",
+    palette: "婚礼色调",
     redLabel: "红色",
     blackLabel: "黑色",
     rsvpCn: "敬请回复",
     rsvpBy: "请于 2026年5月30日前回复",
-    rsvpLeadCn: "让我们知道您是否能出席我们的婚礼",
+    rsvpLead: "让我们知道您是否能出席我们的婚礼",
     attending: "您会参加吗？",
     yes: "是，我会出席",
     no: "很遗憾，我不能出席",
@@ -154,25 +144,25 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     introBody2: "We cannot afford to miss the pleasure of your presence at our wedding.",
     scroll: "Scroll",
     saveDate: "Save the Date",
-    dateEn: "19th September 2026",
-    venueEn: "Venue",
-    venuePlaceEn: "Restaurant Pekin Johor Jaya · Hall 2",
-    programmeEn: "About Wedding",
+    date: "19th September 2026",
+    venue: "Venue",
+    venuePlace: "Restaurant Pekin Johor Jaya · Hall 2",
+    programme: "About Wedding",
     timeline: [
       { time: "18:00", ac: "Arrival"},
       { time: "19:00", ac: "Dinner"},
       { time: "22:00", ac: "End"},
     ],
-    punctualEn: "*Dinner begins at 19:00",
-    dressEn: "Dress Code",
-    formalEn: "Formal attire",
-    leaveWhiteEn: "Please leave the white to the bride",
-    paletteEn: "Wedding Palette",
+    punctual: "*Dinner begins at 19:00",
+    dress: "Dress Code",
+    formal: "Smart Casual",
+    leaveWhite: "Please leave the white to the bride",
+    palette: "Wedding Palette",
     redLabel: "Red",
     blackLabel: "Black",
     rsvpEn: "RSVP",
     rsvpBy: "Reply by 30th May 2026",
-    rsvpLeadEn: "Let us know if you can make it",
+    rsvpLead: "Let us know if you can make it",
     attending: "Will you be attending?",
     yes: "Yes, I'll be there",
     no: "Unfortunately, I can't make it",
@@ -420,11 +410,11 @@ export default function WeddingInvitationWebsite() {
 				{t.saveDate}
 				<br />
 				<span className="block mt-6 text-3xl sm:text-4xl font-semibold">
-				{t.dateCn}
+				{t.date}
 				</span>
 				<span
 				className="block mt-2 text-2xl sm:text-3xl" style={{ fontFamily: "'Playfair Display', serif" }}>
-				{t.dateEn}
+				{t.date}
 				</span>
 				</p>
                 <motion.div initial={{ opacity: 0, y: 24, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="mx-auto mt-12 w-full">
@@ -465,10 +455,8 @@ export default function WeddingInvitationWebsite() {
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-3xl italic text-[#7a3727]">{t.venueCn}</h2>
-              <h3 className="text-2xl italic text-[#7a3727] mt-2">{t.venueEn}</h3>
-              <h4 className="mt-6 text-3xl font-serif text-[#7a3727]">{t.venuePlaceCn}</h4>
-              <h5 className="mt-2 text-2xl font-serif text-[#7a3727]">{t.venuePlaceEn}</h5>
+              <h2 className="text-3xl">{t.venue}</h2>
+              <h3 className="mt-6 text-3xl font-serif text-[#7a3727]">{t.venuePlace}</h3>
               <div className="mt-10 overflow-hidden rounded-2xl border border-[#e5d8cb] shadow-sm">
                 <iframe src="https://www.google.com/maps?q=Restaurant+Pekin+Johor+Jaya&output=embed" width="100%" height="400" style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
               </div>
@@ -479,8 +467,7 @@ export default function WeddingInvitationWebsite() {
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-3xl italic text-[#7a3727]">{t.programmeCn}</h2>
-              <h3 className="text-2xl italic text-[#7a3727] mt-2">{t.programmeEn}</h3>
+              <h2 className="text-3xl italic text-[#7a3727]">{t.programme}</h2>
               <div className="mt-12 flex flex-col items-center gap-6 text-[#7a3727]">
                 {t.timeline.map((item, idx) => (
                   <div key={item.time} className="text-center">
@@ -491,21 +478,17 @@ export default function WeddingInvitationWebsite() {
                 ))}
               </div>
               <div className="mt-10 text-center">
-                <p className="text-base text-[#7a3727] tracking-wide">{t.punctualCn}</p>
-                <p className="mt-2 text-base italic text-[#7a3727] tracking-wide">{t.punctualEn}</p>
+                <p className="text-base text-[#7a3727] tracking-wide">{t.punctual}</p>
               </div>
             </section>
 
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-4xl font-serif text-[#7a3727]">{t.dressCn}</h2>
-              <h3 className="text-2xl font-serif text-[#7a3727] mt-2">{t.dressEn}</h3>
+              <h2 className="text-4xl font-serif text-[#7a3727]">{t.dress}</h2>
               <div className="mt-10 flex justify-center"><img src="/formal.png" alt="Dress Code" className="max-w-md w-full" /></div>
-              <h3 className="mt-8 text-3xl italic text-[#7a3727]">{t.formalCn}</h3>
-              <h4 className="text-2xl italic text-[#7a3727] mt-2">{t.formalEn}</h4>
-              <p className="mt-4 italic text-[#7a3727]">{t.leaveWhiteCn}<br />{t.leaveWhiteEn}</p>
+              <h3 className="mt-8 text-3xl italic text-[#7a3727]">{t.formal}</h3>
+              <p className="mt-4 italic text-[#7a3727]">{t.leaveWhite}<br /></p>
               <br />
-              <h2 className="text-3xl text-[#7a3727]">{t.paletteCn}</h2>
-              <p className="mt-2 text-xl italic text-[#7a3727]" style={{ fontFamily: "'Playfair Display', serif" }}>{t.paletteEn}</p>
+              <h2 className="text-3xl text-[#7a3727]">{t.palette}</h2>
               <div className="mt-8 flex justify-center gap-10">
                 <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#4a0d0d] bg-[#b30000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727]">{t.redLabel}</p></div>
                 <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#222] bg-[#000000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727]">{t.blackLabel}</p></div>
@@ -518,8 +501,7 @@ export default function WeddingInvitationWebsite() {
                   <h2 className="font-serif text-5xl italic text-[#7a3727]">{t.rsvpCn}</h2>
                   <h3 className="font-serif text-3xl italic text-[#7a3727] mt-2">{t.rsvpEn}</h3>
                   <p className="text-base text-[#7a3727] tracking-wide mt-3">{t.rsvpBy}</p>
-                  <p className="mt-3 text-base text-[#8a4a3a]">{t.rsvpLeadCn}</p>
-                  <p className="mt-1 text-base text-[#8a4a3a]">{t.rsvpLeadEn}</p>
+                  <p className="mt-3 text-base text-[#8a4a3a]">{t.rsvpLead}</p>
                 </div>
 
                 <form className="mt-10 space-y-8" onSubmit={(e) => e.preventDefault()}>
