@@ -37,8 +37,7 @@ type Dictionary = {
   palette: string;
   redLabel: string;
   blackLabel: string;
-  rsvpCn: string;
-  rsvpEn: string;
+  rsvp: string;
   rsvpBy: string;
   rsvpLead: string;
   attending: string;
@@ -100,7 +99,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     palette: "婚礼色调",
     redLabel: "红色",
     blackLabel: "黑色",
-    rsvpCn: "敬请回复",
+    rsvp: "敬请回复",
     rsvpBy: "请于 2026年5月30日前回复",
     rsvpLead: "让我们知道您是否能出席我们的婚礼",
     attending: "您会参加吗？",
@@ -160,7 +159,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     palette: "Wedding Palette",
     redLabel: "Red",
     blackLabel: "Black",
-    rsvpEn: "RSVP",
+    rsvp: "RSVP",
     rsvpBy: "Reply by 30th May 2026",
     rsvpLead: "Let us know if you can make it",
     attending: "Will you be attending?",
@@ -498,8 +497,7 @@ export default function WeddingInvitationWebsite() {
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24">
               <div className="mx-auto max-w-3xl rounded-[2rem] border border-[#e5d8cb] bg-white/80 p-8 shadow-sm md:p-10">
                 <div className="text-center">
-                  <h2 className="font-serif text-5xl italic text-[#7a3727]">{t.rsvpCn}</h2>
-                  <h3 className="font-serif text-3xl italic text-[#7a3727] mt-2">{t.rsvpEn}</h3>
+                  <h2 className="font-serif text-5xl italic text-[#7a3727]">{t.rsvp}</h2>
                   <p className="text-base text-[#7a3727] tracking-wide mt-3">{t.rsvpBy}</p>
                   <p className="mt-3 text-base text-[#8a4a3a]">{t.rsvpLead}</p>
                 </div>
