@@ -274,7 +274,7 @@ export default function WeddingInvitationWebsite() {
     setSubmitStatus("idle");
 
     const payload = {
-      submittedAt: new Date().toISOString(),
+      submittedAt: new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toISOString().replace('T',' ').replace('Z',''),
       language: language || "cn",
       attendance: guestCount === "0" ? "No" : "Yes",
       guestName,
