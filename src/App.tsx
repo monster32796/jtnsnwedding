@@ -78,7 +78,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     groomCn: "吴佳得",
     groomEn: "Goh Jia Teck",
     brideCn: "黄薪霓",
-    brideEn: "Shannon Ng",
+    brideEn: "Ng Sze Ni",
     introBody1: "您的到来，将让这份喜悦更加圆满。",
     introBody2: "期待与您共享这美好时刻。",
     scroll: "下滑",
@@ -89,6 +89,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     programme: "婚礼流程",
     timeline: [
       { time: "18:00", ac: "签到合影"},
+	  { time: "18:30", ac: "入席"},
       { time: "19:00", ac: "晚宴"},
       { time: "22:00", ac: "圆满结束"},
     ],
@@ -100,17 +101,17 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     redLabel: "红色",
     blackLabel: "黑色",
     rsvp: "敬请回复",
-    rsvpBy: "请于 2026年5月30日前回复",
+    rsvpBy: "请于2026年5月31日前回复",
     rsvpLead: "让我们知道您是否能出席我们的婚礼",
     attending: "您会参加吗？",
-    yes: "是，我会出席",
+    yes: "我会出席",
     no: "很遗憾，我不能出席",
     adults: "成人数量",
     kids: "小孩数量",
     contact: "联络人",
     fullName: "名字",
     phone: "电话号码",
-    dietary: "饮食习惯",
+    dietary: "饮食要求",
     vegetarian: "素食",
     halal: "清真",
     allergy: "过敏史或备注",
@@ -135,10 +136,10 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     languageCn: "中文",
     languageEn: "English",
     introTop1: "We finally tied the knot!",
-    groomCn: "Goh Jia Teck",
     groomEn: "吴佳得",
-    brideCn: "Shannon Ng",
+    groomCn: "Goh Jia Teck",
     brideEn: "黄薪霓",
+    brideCn: "Ng Sze Ni",
     introBody1: "Your presence will make our joy complete.",
     introBody2: "We hope you can join us on our special day.",
     scroll: "Scroll",
@@ -149,6 +150,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     programme: "About Wedding",
     timeline: [
       { time: "18:00", ac: "Arrival"},
+	  { time: "18:30", ac: "Be Seated"},
       { time: "19:00", ac: "Dinner"},
       { time: "22:00", ac: "End"},
     ],
@@ -160,10 +162,10 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     redLabel: "Red",
     blackLabel: "Black",
     rsvp: "RSVP",
-    rsvpBy: "Reply by 30th May 2026",
+    rsvpBy: "By 31st May 2026",
     rsvpLead: "Let us know if you can make it",
     attending: "Will you be attending?",
-    yes: "Yes, I'll be there",
+    yes: "I'll be there",
     no: "Unfortunately, I can't make it",
     adults: "How many adults?",
     kids: "How many kids?",
@@ -382,12 +384,12 @@ export default function WeddingInvitationWebsite() {
                 <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }} className="mt-8 text-4xl text-[#7a3727] sm:text-5xl md:text-6xl lg:text-7xl" style={{ fontFamily: "'Noto Serif SC', serif", letterSpacing: "0.08em", lineHeight: "1.1" }}>
                   {t.groomCn}
                   <br />
-                  <span className="block mt-2 text-lg md:text-xl" style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}>{t.groomEn}</span>
-                  <span className="text-3xl md:text-4xl" style={{ fontFamily: "'Playfair Display', serif" }}>&</span>
-                  <br />
+                  <p className="block mt-2 text-g md:text-xl" style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}>{t.groomEn}</p>
+				  
+                  <p className="text-3xl md:text-4xl" style={{ fontFamily: "'DynaLight', serif" }}>&</p>
                   {t.brideCn}
-                  <br />
-                  <span className="block mt-2 text-lg md:text-xl" style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}>{t.brideEn}</span>
+
+                  <p className="block mt-2 text-lg md:text-xl" style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}>{t.brideEn}</p>
                 </motion.h1>
 
                 <motion.div initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.8 }} className="mt-10 max-w-3xl space-y-5 px-2 sm:px-4">
@@ -403,8 +405,8 @@ export default function WeddingInvitationWebsite() {
                   transition={{ duration: 2.4, repeat: Infinity }}
                   className="mt-14 flex flex-col items-center text-[#7a3727] sm:mt-16 cursor-pointer"
                 >
-                  <span className="text-xs uppercase tracking-[0.24em] sm:text-sm sm:tracking-[0.32em]" style={{ fontFamily: "'Playfair Display', serif" }}>{t.scroll}</span>
-                  <span className="mt-3 text-4xl leading-none">↓</span>
+                  <p className="text-xs uppercase tracking-[0.24em] sm:text-sm sm:tracking-[0.32em]" style={{ fontFamily: "'Playfair Display', serif" }}>{t.scroll}</p>
+                  <p className="mt-3 text-4xl leading-none">↓</p>
                 </motion.div>
               </div>
             </section>
@@ -412,12 +414,13 @@ export default function WeddingInvitationWebsite() {
               <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
               <div className="mx-auto max-w-4xl">
                 <img src="/wedding.JPG" alt="Wedding-picture" className="w-full max-w-lg mx-auto rounded-[2rem] shadow-lg" />
-                <p className="mt-10 text-2xl" style={{ fontFamily: language === "en" ? "'Playfair Display', serif" : "'Noto Serif SC', serif" }}>
-				{t.saveDate}
 				<br />
-				<span className="block mt-6 text-3xl sm:text-4xl font-semibold" style={{ fontFamily: language === "en" ? "'Playfair Display', serif" : "'Noto Serif SC', serif" }}>
+				<br />
+                <h2 className="block mt-2 text-lg md:text-xl underline font-bold" style={{ fontFamily }}>
+				{t.saveDate}
+				</h2>
+				<p className="block mt-6 text-2xl sm:text-3xl" style={{ fontFamily: language === "en" ? "'Playfair Display', serif" : "'Noto Serif SC', serif" }}>
 				{t.date}
-				</span>
 				</p>
                 <motion.div initial={{ opacity: 0, y: 24, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="mx-auto mt-12 w-full">
                   <div className="mx-auto max-w-[260px] text-[#5e3a31]">
@@ -458,10 +461,15 @@ export default function WeddingInvitationWebsite() {
                 ))}
               </div>
             </section>
-
+<div className="flex items-center justify-center gap-4 mb-12">
+  <div className="w-16 h-[1px] bg-[#d7c6b7]" />
+  <span className="text-[#c9a27a] text-sm">✦</span>
+  <div className="w-16 h-[1px] bg-[#d7c6b7]" />
+</div>
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-4xl" style={{ fontFamily }}>{t.venue}</h2>
-              <p className="mt-6 text-2xl" style={{ fontFamily }}>{t.venuePlace}</p>
+              <h2 className="block mt-2 text-lg md:text-xl underline font-bold" style={{ fontFamily }}>{t.venue}</h2>
+			  <br />
+              <p className="block mt-2 text-lg md:text-xl" style={{ fontFamily }}>{t.venuePlace}</p>
               <div className="mt-10 overflow-hidden rounded-2xl border border-[#e5d8cb] shadow-sm">
                 <iframe src="https://www.google.com/maps?q=Restaurant+Pekin+Johor+Jaya&output=embed" width="100%" height="400" style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
               </div>
@@ -470,47 +478,61 @@ export default function WeddingInvitationWebsite() {
                 <a href="https://ul.waze.com/ul?place=ChIJr1npfG9s2jERhBLU6DKztWI&ll=1.52385010%2C103.80705860&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 rounded-full bg-[#e8f4f8] shadow-md border border-[#d6e6ee] hover:shadow-lg transition"><img src="/waze.png" alt="Waze" className="w-8 h-8" /><span className="text-[#5a7d8a] font-serif text-base" style={{ fontFamily }}>Waze</span></a>
               </div>
             </section>
-
+<div className="flex items-center justify-center gap-4 mb-12">
+  <div className="w-16 h-[1px] bg-[#d7c6b7]" />
+  <span className="text-[#c9a27a] text-sm">✦</span>
+  <div className="w-16 h-[1px] bg-[#d7c6b7]" />
+</div>
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center">
-              <h2 className="text-4xl" style={{ fontFamily }}>{t.programme}</h2>
-              <div className="mt-6 text-2xl flex flex-col items-center gap-6 text-[#7a3727]">
+              <h2 className="block mt-2 text-lg md:text-xl underline font-bold" style={{ fontFamily }}>{t.programme}</h2>
+			  <br />
+              <div className="block mt-2 text-lg md:text-xl items-center gap-6 text-[#7a3727]">
                 {t.timeline.map((item, idx) => (
                   <div key={item.time} className="text-center" >
-                    <p className="text-lg" style={{ fontFamily }}>{item.time}</p>
-                    <p className="mt-2 text-xl" style={{ fontFamily }}>{item.ac}</p>
+                    <p className="block mt-2 text-lg md:text-xl" style={{ fontFamily }}>{item.time}</p>
+                    <p className="block mt-2 text-lg md:text-xl" style={{ fontFamily }}>{item.ac}</p>
                     {idx < t.timeline.length - 1 && <div className="text-2xl mt-4">|</div>}
                   </div>
                 ))}
               </div>
               <div className="mt-10 text-center">
-                <p className="mt-6 text-2xl">{t.punctual}</p>
+                <p className="block mt-2 text-lg md:text-xl" style={{ fontFamily }}>{t.punctual}</p>
               </div>
             </section>
-
+			<div className="flex items-center justify-center gap-4 mb-12">
+  <div className="w-16 h-[1px] bg-[#d7c6b7]" />
+  <span className="text-[#c9a27a] text-sm">✦</span>
+  <div className="w-16 h-[1px] bg-[#d7c6b7]" />
+</div>
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 text-center style={{ fontFamily }}">
-              <h2 className="text-4xl font-serif text-[#7a3727]  ">{t.dress}</h2>
+              <h2 className="block mt-2 text-lg md:text-xl underline font-bold" style={{ fontFamily }}>{t.dress}</h2>
               <div className="mt-10 flex justify-center"><img src="/formal.png" alt="Dress Code" className="max-w-md w-full" /></div>
-              <p className="mt-8 text-2xl style={{ fontFamily }}">{t.formal}</p>
-              <p className="mt-4 style={{ fontFamily }}">{t.leaveWhite}<br /></p>
+			  <br />
+              <p className="block mt-2 text-lg md:text-xl">{t.formal}</p>
+              <p className="mt-2 text-sm text-[#7a3727] style={{ fontFamily }}">{t.leaveWhite}<br /></p>
               <br />
-              <p className="mt-8 text-2xl style={{ fontFamily }}">{t.palette}</p>
+              <p className="block mt-2 text-lg md:text-xl">{t.palette}</p>
               <div className="mt-8 flex justify-center gap-10">
                 <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#4a0d0d] bg-[#b30000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727] style={{ fontFamily }}">{t.redLabel}</p></div>
                 <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#222] bg-[#000000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727] style={{ fontFamily }}">{t.blackLabel}</p></div>
               </div>
             </section>
-
+			<div className="flex items-center justify-center gap-4 mb-12">
+			  <div className="w-16 h-[1px] bg-[#d7c6b7]" />
+			  <span className="text-[#c9a27a] text-sm">✦</span>
+			  <div className="w-16 h-[1px] bg-[#d7c6b7]" />
+			</div>
             <section className="bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-24 style={{ fontFamily }}">
               <div className="mx-auto max-w-3xl rounded-[2rem] border border-[#e5d8cb] bg-white/80 p-8 shadow-sm md:p-10">
                 <div className="text-center">
-                  <h2 className="text-4xl">{t.rsvp}</h2>
-                  <p className="mt-4">{t.rsvpBy}</p>
-                  <p className="mt-3 text-base text-[#8a4a3a]">{t.rsvpLead}</p>
+                  <h2 className="block mt-2 text-lg md:text-xl underline font-bold">{t.rsvp}</h2>
+                  <p className="block mt-2 text-lg md:text-xl">{t.rsvpBy}</p>
+                  <p className="block mt-2 text-lg md:text-xl">{t.rsvpLead}</p>
                 </div>
 
                 <form className="mt-10 space-y-8" onSubmit={(e) => e.preventDefault()}>
                   <div>
-                    <p className="text-2xl font-serif text-[#6d3122]">{t.attending}</p>
+                    <p className="block mt-2 text-lg md:text-xl">{t.attending}</p>
                     <div className="mt-5 space-y-4 text-[#6d3122]">
                       <label className="flex items-center gap-3 text-base"><input type="radio" name="attendance" value="yes" checked={guestCount !== "0"} onChange={() => setGuestCount("1")} className="h-4 w-4 accent-[#a37b3a]" /><span>{t.yes}</span></label>
                       <label className="flex items-center gap-3 text-base"><input type="radio" name="attendance" value="no" checked={guestCount === "0"} onChange={() => setGuestCount("0")} className="h-4 w-4 accent-[#a37b3a]" /><span>{t.no}</span></label>
@@ -521,17 +543,17 @@ export default function WeddingInvitationWebsite() {
                     <>
                       <div className="grid gap-8 md:grid-cols-2">
                         <div>
-                          <p className="text-xl font-serif text-[#6d3122]">{t.adults}</p>
+                          <p className="block mt-2 text-lg md:text-xl">{t.adults}</p>
                           <div className="mt-4 flex items-center gap-5"><button type="button" onClick={() => setGuestCount((prev) => String(Math.max(1, Number(prev || 1) - 1)))} className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#e5d8cb] bg-[#faf7f3] text-xl text-[#8a6c4e]">−</button><span className="min-w-8 text-center text-lg text-[#6d3122]">{guestCount}</span><button type="button" onClick={() => setGuestCount((prev) => String(Number(prev || 1) + 1))} className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#e5d8cb] bg-[#faf7f3] text-xl text-[#8a6c4e]">+</button></div>
                         </div>
                         <div>
-                          <p className="text-xl font-serif text-[#6d3122]">{t.kids}</p>
+                          <p className="block mt-2 text-lg md:text-xl">{t.kids}</p>
                           <div className="mt-4 flex items-center gap-5"><button type="button" onClick={() => setKidsCount((prev) => String(Math.max(0, Number(prev || 0) - 1)))} className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#e5d8cb] bg-[#faf7f3] text-xl text-[#8a6c4e]">−</button><span className="min-w-8 text-center text-lg text-[#6d3122]">{kidsCount}</span><button type="button" onClick={() => setKidsCount((prev) => String(Number(prev || 0) + 1))} className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#e5d8cb] bg-[#faf7f3] text-xl text-[#8a6c4e]">+</button></div>
                         </div>
                       </div>
 
                       <div className="rounded-[1.5rem] bg-[#faf7f3] p-5">
-                        <p className="text-base text-[#8a6c4e]">{t.contact}</p>
+                        <p className="block mt-2 text-lg md:text-xl">{t.contact}</p>
                         <div className="mt-4 space-y-4">
                           <input value={guestName} onChange={(e) => setGuestName(e.target.value)} placeholder={t.fullName} className="w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none" />
                           <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder={t.phone} className="w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none" />
@@ -539,7 +561,7 @@ export default function WeddingInvitationWebsite() {
                       </div>
 
                       <div>
-                        <p className="text-xl font-serif text-[#6d3122]">{t.dietary}</p>
+                        <p className="block mt-2 text-lg md:text-xl">{t.dietary}</p>
                         <div className="mt-4 flex flex-wrap gap-3">
                           <button type="button" onClick={() => setIsVegetarian((prev) => !prev)} className={`rounded-full border px-5 py-2 text-sm ${isVegetarian ? "bg-[#7a3727] text-white" : "bg-white"}`}>{t.vegetarian}</button>
                           <button type="button" onClick={() => setIsHalal((prev) => !prev)} className={`rounded-full border px-5 py-2 text-sm ${isHalal ? "bg-[#7a3727] text-white" : "bg-white"}`}>{t.halal}</button>
@@ -548,7 +570,7 @@ export default function WeddingInvitationWebsite() {
                       </div>
 
                       <div>
-                        <p className="text-xl font-serif text-[#6d3122]">{t.wishes}</p>
+                        <p className="block mt-2 text-lg md:text-xl">{t.wishes}</p>
                         <textarea value={guestMessage} onChange={(e) => setGuestMessage(e.target.value)} placeholder={t.wishesPlaceholder} className="mt-4 w-full rounded-xl border border-[#eadfd4] bg-[#faf7f3] px-5 py-4" />
                       </div>
                     </>
