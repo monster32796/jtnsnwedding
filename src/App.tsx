@@ -398,7 +398,12 @@ export default function WeddingInvitationWebsite() {
                   </p>
                 </motion.div>
 
-                <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2.4, repeat: Infinity }} className="mt-14 flex flex-col items-center text-[#7a3727] sm:mt-16">
+                <motion.div
+                  onClick={() => window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" })}
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 2.4, repeat: Infinity }}
+                  className="mt-14 flex flex-col items-center text-[#7a3727] sm:mt-16 cursor-pointer"
+                >
                   <span className="text-xs uppercase tracking-[0.24em] sm:text-sm sm:tracking-[0.32em]" style={{ fontFamily: "'Playfair Display', serif" }}>{t.scroll}</span>
                   <span className="mt-3 text-4xl leading-none">↓</span>
                 </motion.div>
