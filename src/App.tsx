@@ -555,7 +555,7 @@ export default function WeddingInvitationWebsite() {
                   ) : (
 				  <div className="space-y-6">
                       <div className="rounded-[1.5rem] bg-[#faf7f3] p-5">
-                        <p className="text-base text-[#8a6c4e]">{t.fullName}</p>
+                        <p className="text-xl font-serif text-[#6d3122]">{t.fullName}</p>
                         <input
                           value={guestName}
                           onChange={(e) => setGuestName(e.target.value)}
@@ -564,15 +564,26 @@ export default function WeddingInvitationWebsite() {
                         />
                       </div>
 
-                      <div>
-                        <p className="text-xl font-serif text-[#6d3122]">{t.wishes}</p>
-                        <textarea
-                          value={guestMessage}
-                          onChange={(e) => setGuestMessage(e.target.value)}
-                          placeholder={t.wishesPlaceholder}
-                          className="mt-4 w-full rounded-xl border border-[#eadfd4] bg-[#faf7f3] px-5 py-4"
+					  
+					  <div className="rounded-[1.5rem] bg-[#faf7f3] p-5">
+					  <p className="text-xl font-serif text-[#6d3122]">{t.phone}</p>
+                        <input
+                          value={phoneNumber}
+                          onChange={(e) => setGuestName(e.target.value)}
+                          placeholder={t.phone}
+                          className="mt-4 w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none"
                         />
-                      </div>
+						</div>
+
+					<div className="rounded-[1.5rem] bg-[#faf7f3] p-5">
+					  <p className="text-xl font-serif text-[#6d3122]">{t.wishes}</p>
+                        <input
+                          value={guestMessage}
+                          onChange={(e) => setGuestName(e.target.value)}
+                          placeholder={t.wishesPlaceholder}
+                          className="mt-4 w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none"
+                        />
+						</div>
                     </div>
                   )}
 
