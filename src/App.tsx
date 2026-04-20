@@ -564,26 +564,17 @@ export default function WeddingInvitationWebsite() {
                         />
                       </div>
 
-					  
+                      <div>
 					  <div className="rounded-[1.5rem] bg-[#faf7f3] p-5">
-					  <p className="text-xl font-serif text-[#6d3122]">{t.phone}</p>
-                        <input
-                          value={phoneNumber}
-                          onChange={(e) => setGuestName(e.target.value)}
-                          placeholder={t.phone}
-                          className="mt-4 w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none"
-                        />
-						</div>
-
-					<div className="rounded-[1.5rem] bg-[#faf7f3] p-5">
-					  <p className="text-xl font-serif text-[#6d3122]">{t.wishes}</p>
-                        <input
+                        <p className="text-xl font-serif text-[#6d3122]">{t.wishes}</p>
+                        <textarea
                           value={guestMessage}
-                          onChange={(e) => setGuestName(e.target.value)}
+                          onChange={(e) => setGuestMessage(e.target.value)}
                           placeholder={t.wishesPlaceholder}
-                          className="mt-4 w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none"
+                          className="mt-4 w-full rounded-xl border border-[#eadfd4] bg-[#faf7f3] px-5 py-4"
                         />
-						</div>
+                      </div>
+					  </div>
                     </div>
                   )}
 
