@@ -311,6 +311,7 @@ export default function WeddingInvitationWebsite() {
   const labelB = language === "en" ? "HOURS" : "时";
   const labelC = language === "en" ? "MIN" : "分";
   const labelD = language === "en" ? "SEC" : "秒";
+  
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#120707] text-[#f7ead7]">
@@ -380,16 +381,15 @@ export default function WeddingInvitationWebsite() {
                   {t.introTop1}
                   <br />
                 </motion.p>
-
-                <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }} className="mt-8 text-4xl text-[#7a3727] sm:text-5xl md:text-6xl lg:text-7xl" style={{ fontFamily: "'Noto Serif SC', serif", letterSpacing: "0.08em", lineHeight: "1.1" }}>
+				<motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }} className="mt-8 text-4xl text-[#7a3727] sm:text-5xl md:text-6xl lg:text-7xl" style={{ fontFamily: "'Noto Serif SC', serif", letterSpacing: "0.08em", lineHeight: "1.1" }}>
                   {t.groomCn}
                   <br />
-                  <p className="block mt-2 text-g md:text-xl" style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}>{t.groomEn}</p>
-				  
-                  <p className="text-3xl md:text-4xl" style={{ fontFamily: "'DynaLight', serif" }}>&</p>
+                  <span className="block mt-2 text-lg md:text-xl" style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}>{t.groomEn}</span>
+                  <span className="text-3xl md:text-4xl" style={{ fontFamily: "'Playfair Display', serif" }}>&</span>
+                  <br />
                   {t.brideCn}
-
-                  <p className="block mt-2 text-lg md:text-xl" style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}>{t.brideEn}</p>
+                  <br />
+                  <span className="block mt-2 text-lg md:text-xl" style={{ fontFamily: "'Playfair Display', serif", lineHeight: "1.6", letterSpacing: "0.02em" }}>{t.brideEn}</span>
                 </motion.h1>
 
                 <motion.div initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.8 }} className="mt-10 max-w-3xl space-y-5 px-2 sm:px-4">
@@ -399,14 +399,15 @@ export default function WeddingInvitationWebsite() {
                     {t.introBody2}
                   </p>
                 </motion.div>
-				<motion.div
+
+                <motion.div
                   onClick={() => window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" })}
                   animate={{ y: [0, 8, 0] }}
                   transition={{ duration: 2.4, repeat: Infinity }}
                   className="mt-14 flex flex-col items-center text-[#7a3727] sm:mt-16 cursor-pointer"
                 >
-                  <p className="text-xs uppercase tracking-[0.24em] sm:text-sm sm:tracking-[0.32em]" style={{ fontFamily: "'Playfair Display', serif" }}>{t.scroll}</p>
-                  <p className="mt-3 text-4xl leading-none">↓</p>
+                  <span className="text-xs uppercase tracking-[0.24em] sm:text-sm sm:tracking-[0.32em]" style={{ fontFamily: "'Playfair Display', serif" }}>{t.scroll}</span>
+                  <span className="mt-3 text-4xl leading-none">↓</span>
                 </motion.div>
               </div>
             </section>
