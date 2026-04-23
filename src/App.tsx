@@ -85,7 +85,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     saveDate: "预留此日",
     date: "2026年9月19日",
     venue: "婚礼地点",
-    venuePlace: "北京楼柔佛再也 · 2号厅",
+    venuePlace: "新山 · 北京楼柔佛再也 · 2号厅",
     programme: "婚礼流程",
     timeline: [
       { time: "18:00", ac: "签到合影"},
@@ -146,7 +146,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     saveDate: "Save the Date",
     date: "19th September 2026",
     venue: "Venue",
-    venuePlace: "Restaurant Pekin Johor Jaya · Hall 2",
+    venuePlace: "Johor Bahru · Restaurant Pekin Johor Jaya · Hall 2",
     programme: "About Wedding",
     timeline: [
       { time: "18:00", ac: "Arrival"},
