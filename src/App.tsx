@@ -39,7 +39,7 @@ type Dictionary = {
   leaveWhite: string;
   palette: string;
   redLabel: string;
-  blackLabel: string;
+  whiteLabel: string;
   rsvp: string;
   rsvpBy: string;
   rsvpLead: string;
@@ -114,7 +114,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     contact: "联络人",
 	relationship: "宾客关系",
     relationshipPlaceholder: "请选择宾客关系",
-    relationshipOptions: ["新郎朋友", "新郎亲戚", "新娘朋友", "新娘亲戚", "新郎父母朋友", "新娘父母朋友"],
+    relationshipOptions: ["新郎朋友", "新郎亲戚", "新郎父母朋友", "新娘朋友", "新娘亲戚", "新娘父母朋友"],
     fullName: "名字",
     phone: "电话号码",
     dietary: "饮食要求",
@@ -178,7 +178,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     contact: "Main contact",
 	relationship: "Guest relationship",
     relationshipPlaceholder: "Please select relationship",
-    relationshipOptions: ["Groom friend", "Groom relative", "Bride friend", "Bride relative", "Groom parent friend", "Bride parent friend"],
+    relationshipOptions: ["Groom friend", "Groom relative",  "Groom parent friend", "Bride friend", "Bride relative", "Bride parent friend"],
     fullName: "Full name",
     phone: "Phone Number",
     dietary: "Dietary",
