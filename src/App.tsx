@@ -367,6 +367,13 @@ export default function WeddingInvitationWebsite() {
         {showThankYouScreen ? (
           <motion.section key="thank-you" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -24 }} transition={{ duration: 0.6 }} className="flex min-h-screen items-center justify-center bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px] px-6 py-16 text-[#7a3727]">
             <div className="w-full max-w-2xl rounded-[2rem] border border-[#e5d8cb] bg-white/90 p-10 text-center shadow-xl">
+				<motion.div
+			initial={{ rotate: 0, opacity: 0, scale: 0.9 }}
+			animate={{ rotate: [0, 16, -10, 14, -6, 0], opacity: 1, scale: 1 }}
+			transition={{ duration: 1.4, ease: "easeInOut", repeat: Infinity, repeatDelay: 1.6 }}
+			className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#faf7f3] text-3xl shadow-[0_8px_22px_rgba(122,55,39,0.10)]">
+			👋
+			</motion.div>
               <p className="text-lg" style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1.6", letterSpacing: "0.04em" }}>{t.thankYouTitle}</p>
               <p className="mt-6 text-base leading-relaxed" style={{ fontFamily: "'Noto Serif SC', serif", lineHeight: "1.8", letterSpacing: "0.03em" }}>{t.thankYouBody}</p>
               {guestName && <p className="mt-6 text-xl" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "0.04em" }}>{language === "en" ? `${guestName}, see you there.` : `${guestName}，婚礼见。`}</p>}
