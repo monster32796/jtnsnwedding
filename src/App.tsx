@@ -21,7 +21,7 @@ type Dictionary = {
   groomEn: string;
   relationship: string;
   relationshipPlaceholder: string;
-  relationshipOptions:  string;
+  relationshipOptions: string[];
   brideCn: string;
   brideEn: string;
   introBody1: string;
