@@ -102,7 +102,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     leaveWhite: "请把白色着装留给新娘",
     palette: "婚礼色调",
     redLabel: "红色",
-    blackLabel: "黑色",
+    whiteLabel: "白色",
     rsvp: "敬请回复",
     rsvpBy: "请于2026年5月31日前回复",
     rsvpLead: "让我们知道您是否能出席我们的婚礼",
@@ -166,7 +166,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     leaveWhite: "Please leave the white to the bride",
     palette: "Wedding Palette",
     redLabel: "Red",
-    blackLabel: "Black",
+    whiteLabel: "White",
     rsvp: "RSVP",
     rsvpBy: "By 31st May 2026",
     rsvpLead: "Let us know if you can make it",
@@ -539,7 +539,7 @@ export default function WeddingInvitationWebsite() {
               <p className="block mt-2 text-lg md:text-xl">{t.palette}</p>
               <div className="mt-8 flex justify-center gap-10">
                 <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#4a0d0d] bg-[#b30000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727] style={{ fontFamily }}">{t.redLabel}</p></div>
-                <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#222] bg-[#000000] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727] style={{ fontFamily }}">{t.blackLabel}</p></div>
+                <div className="flex flex-col items-center"><div className="h-5 w-5 rounded-full border-2 border-[#333] bg-[#ffffff] shadow-inner" /><p className="mt-2 text-sm text-[#7a3727] style={{ fontFamily }}">{t.whiteLabel}</p></div>
               </div>
             </section>
 			<div className="flex items-center justify-center gap-4 mb-12">
