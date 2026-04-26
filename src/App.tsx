@@ -19,6 +19,9 @@ type Dictionary = {
   introTop1: string;
   groomCn: string;
   groomEn: string;
+  relationship: string;
+  relationshipPlaceholder: string;
+  relationshipOptions:  string;
   brideCn: string;
   brideEn: string;
   introBody1: string;
