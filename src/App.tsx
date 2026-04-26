@@ -39,7 +39,7 @@ type Dictionary = {
   leaveWhite: string;
   palette: string;
   redLabel: string;
-  blackLabel: string;
+  whiteLabel: string;
   rsvp: string;
   rsvpBy: string;
   rsvpLead: string;
