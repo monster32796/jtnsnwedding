@@ -109,6 +109,9 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     adults: "成人数量",
     kids: "小孩数量",
     contact: "联络人",
+	relationship: "宾客关系",
+    relationshipPlaceholder: "请选择宾客关系",
+    relationshipOptions: ["新郎朋友", "新郎亲戚", "新娘朋友", "新娘亲戚", "新郎父母朋友", "新娘父母朋友"],
     fullName: "名字",
     phone: "电话号码",
     dietary: "饮食要求",
@@ -170,6 +173,9 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     adults: "How many adults?",
     kids: "How many kids?",
     contact: "Main contact",
+	relationship: "Guest relationship",
+    relationshipPlaceholder: "Please select relationship",
+    relationshipOptions: ["Groom friend", "Groom relative", "Bride friend", "Bride relative", "Groom parent friend", "Bride parent friend"],
     fullName: "Full name",
     phone: "Phone Number",
     dietary: "Dietary",
@@ -190,10 +196,11 @@ export default function WeddingInvitationWebsite() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isCurtainOpened, setIsCurtainOpened] = useState(false);
   const [isCurtainOpening, setIsCurtainOpening] = useState(false);
-  const RSVP_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxAA__B0KP3g5ZBNhU_xmMzYX2ZsNm_jSRdt1QaLBomT0QoxBajMRR1ek4B6HTbwawDnw/exec";
+  const RSVP_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyDnquZD-s3X3z2SvXc0aV9DBy9ghTZGM97grzU0eJlNS1JxZzTGE_fGXmhWQnpJYjPGQ/exec";
 
   const [guestName, setGuestName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [guestRelationship, setGuestRelationship] = useState("");
   const [guestCount, setGuestCount] = useState("1");
   const [kidsCount, setKidsCount] = useState("0");
   const [guestMessage, setGuestMessage] = useState("");
@@ -267,9 +274,22 @@ export default function WeddingInvitationWebsite() {
 
   const handleSubmitRSVP = async () => {
     if (!guestName.trim() && guestCount !== "0") {
-      alert(language === "en" ? "Please enter your name." : "请输入姓名。");
+      alert(language === "en" ? "Please enter your name" : "请输入姓名");
       return;
     }
+	if (!guestRelationship) {
+    alert(language === "en" ? "Please select relationship" : "请选择宾客关系");
+    return;
+  }
+   if (!phoneNumber.trim()) {
+    alert(language === "en" ? "Please enter phone number" : "请输入电话号码");
+    return;
+  }
+  if (!/^\d+$/.test(phoneNumber)) {
+    alert(language === "en" ? "Phone number must be numeric only" : "电话号码只能输入数字");
+    return;
+  }
+  
     if (!RSVP_WEB_APP_URL.trim()) return;
 
     setIsSubmitting(true);
@@ -281,6 +301,7 @@ export default function WeddingInvitationWebsite() {
       attendance: guestCount === "0" ? "No" : "Yes",
       guestName,
       phoneNumber,
+	  guestRelationship,
       adults: guestCount === "0" ? "0" : guestCount,
       kids: guestCount === "0" ? "0" : kidsCount,
       vegetarian: isVegetarian ? "Yes" : "No",
@@ -557,9 +578,22 @@ export default function WeddingInvitationWebsite() {
                         <p className="block mt-2 text-lg md:text-xl">{t.contact}</p>
                         <div className="mt-4 space-y-4">
                           <input value={guestName} onChange={(e) => setGuestName(e.target.value)} placeholder={t.fullName} className="w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none" />
-                          <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder={t.phone} className="w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none" />
+                          <input value={phoneNumber}onChange={(e) => {const value = e.target.value.replace(/[^0-9]/g, ""); setPhoneNumber(value);}} inputMode="numeric" pattern="[0-9]*" placeholder={t.phone} className="w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none" />
+						<p className="block mt-2 text-lg md:text-xl">{t.relationship}</p>
+						  <select
+                          value={guestRelationship}
+                          onChange={(e) => setGuestRelationship(e.target.value)}
+                          className="w-full rounded-xl border border-[#eadfd4] bg-white px-5 py-4 text-[#6d3122] outline-none"
+                        >
+                          <option value="">{t.relationshipPlaceholder}</option>
+                          {t.relationshipOptions.map((option) => (
+                            <option key={option} value={option}>{option}</option>
+                          ))}
+                        </select>
                         </div>
                       </div>
+					  
+					  
 
                       <div>
                         <p className="block mt-2 text-lg md:text-xl">{t.dietary}</p>
