@@ -39,7 +39,7 @@ type Dictionary = {
   leaveWhite: string;
   palette: string;
   redLabel: string;
-  whiteLabel: string;
+  blackLabel: string;
   rsvp: string;
   rsvpBy: string;
   rsvpLead: string;
@@ -114,7 +114,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     contact: "联络人",
 	relationship: "宾客关系",
     relationshipPlaceholder: "请选择宾客关系",
-    relationshipOptions: ["新郎朋友", "新郎亲戚", "新郎父母朋友", "新娘朋友", "新娘亲戚", "新娘父母朋友"],
+    relationshipOptions: ["新郎朋友", "新郎亲戚", "新娘朋友", "新娘亲戚", "新郎父母朋友", "新娘父母朋友"],
     fullName: "名字",
     phone: "电话号码",
     dietary: "饮食要求",
@@ -178,7 +178,7 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     contact: "Main contact",
 	relationship: "Guest relationship",
     relationshipPlaceholder: "Please select relationship",
-    relationshipOptions: ["Groom friend", "Groom relative",  "Groom parent friend", "Bride friend", "Bride relative", "Bride parent friend"],
+    relationshipOptions: ["Groom friend", "Groom relative", "Bride friend", "Bride relative", "Groom parent friend", "Bride parent friend"],
     fullName: "Full name",
     phone: "Phone Number",
     dietary: "Dietary",
@@ -216,6 +216,7 @@ export default function WeddingInvitationWebsite() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [language, setLanguage] = useState<Language>(null);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const t = language ? TEXT[language] : TEXT.cn;
   const fontFamily = language === "en"
@@ -331,6 +332,13 @@ export default function WeddingInvitationWebsite() {
     }
   };
 
+  useEffect(() => {
+    if (!language) return;
+    setShowConfetti(true);
+    const timer = window.setTimeout(() => setShowConfetti(false), 3500);
+    return () => window.clearTimeout(timer);
+  }, [language]);
+
   const labelA = language === "en" ? "DAYS" : "天";
   const labelB = language === "en" ? "HOURS" : "时";
   const labelC = language === "en" ? "MIN" : "分";
@@ -400,6 +408,37 @@ export default function WeddingInvitationWebsite() {
             <section className="relative min-h-screen overflow-hidden bg-[#f5efe6] bg-[radial-gradient(rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px]">
               <div className="absolute inset-y-0 left-0 z-10 w-[13%] min-w-[54px] md:w-[16%] md:min-w-[90px] lg:w-[20%] lg:min-w-[140px] bg-[linear-gradient(90deg,#64100d_0%,#8c1712_18%,#73120e_36%,#971912_52%,#6d100d_70%,#8d1610_84%,#5a0c0a_100%)] opacity-95" />
               <div className="absolute inset-y-0 right-0 z-10 w-[13%] min-w-[54px] md:w-[16%] md:min-w-[90px] lg:w-[20%] lg:min-w-[140px] bg-[linear-gradient(270deg,#64100d_0%,#8c1712_18%,#73120e_36%,#971912_52%,#6d100d_70%,#8d1610_84%,#5a0c0a_100%)] opacity-95" />
+			  {showConfetti && (
+              <div className="pointer-events-none fixed inset-0 z-[120] overflow-hidden">
+                {Array.from({ length: 36 }).map((_, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{
+                      y: -40,
+                      x: `${(index * 37) % 100}vw`,
+                      rotate: 0,
+                      opacity: 0,
+                    }}
+                    animate={{
+                      y: "110vh",
+                      rotate: 360 + index * 18,
+                      opacity: [0, 1, 1, 0],
+                    }}
+                    transition={{
+                      duration: 2.8 + (index % 5) * 0.25,
+                      delay: (index % 12) * 0.08,
+                      ease: "easeOut",
+                    }}
+                    className="absolute block h-3 w-1.5 rounded-sm"
+                    style={{
+                      backgroundColor: ["#8b2f22", "#c9a27a", "#f5efe6", "#ffffff", "#a55a45"][index % 5],
+                      boxShadow: "0 0 8px rgba(201,162,122,0.28)",
+                    }}
+                  />
+                ))}
+              </div>
+            )}
+            
               <div className="relative z-30 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 md:px-10">
                 <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.7 }} className="text-sm text-[#7a3727] sm:text-base md:text-lg" style={{ lineHeight: "1.6", letterSpacing: "0.08em", fontFamily: "'Noto Serif SC', serif" }}>
                   {t.introTop1}
