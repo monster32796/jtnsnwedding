@@ -304,7 +304,7 @@ export default function WeddingInvitationWebsite() {
       language: language || "cn",
       attendance: guestCount === "0" ? "No" : "Yes",
       guestName,
-      phoneNumber,
+    phoneNumber: `'${phoneNumber}`,
 	  guestRelationship,
       adults: guestCount === "0" ? "0" : guestCount,
       kids: guestCount === "0" ? "0" : kidsCount,
