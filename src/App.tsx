@@ -281,6 +281,7 @@ export default function WeddingInvitationWebsite() {
       alert(language === "en" ? "Please enter your name" : "请输入姓名");
       return;
     }
+	  if (guestCount !== "0") {
 	if (!guestRelationship) {
     alert(language === "en" ? "Please select relationship" : "请选择宾客关系");
     return;
@@ -293,6 +294,7 @@ export default function WeddingInvitationWebsite() {
     alert(language === "en" ? "Phone number must be numeric only" : "电话号码只能输入数字");
     return;
   }
+	  }
   
     if (!RSVP_WEB_APP_URL.trim()) return;
 
@@ -304,8 +306,8 @@ export default function WeddingInvitationWebsite() {
       language: language || "cn",
       attendance: guestCount === "0" ? "No" : "Yes",
       guestName,
-    phoneNumber: `'${phoneNumber}`,
-	  guestRelationship,
+    phoneNumber: guestCount === "0" ? "" : `'${phoneNumber}`,
+	  guestRelationship: guestCount === "0" ? "" : guestRelationship,
       adults: guestCount === "0" ? "0" : guestCount,
       kids: guestCount === "0" ? "0" : kidsCount,
       vegetarian: isVegetarian ? "Yes" : "No",
