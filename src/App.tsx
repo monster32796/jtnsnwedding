@@ -41,7 +41,6 @@ type Dictionary = {
   redLabel: string;
   whiteLabel: string;
   rsvp: string;
-  #rsvpBy: string;
   rsvpLead: string;
   attending: string;
   yes: string;
@@ -104,7 +103,6 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     redLabel: "红色",
     whiteLabel: "白色",
     rsvp: "敬请回复",
-    #rsvpBy: "请于2026年5月31日前回复",
     rsvpLead: "让我们知道您是否能出席我们的婚礼",
     attending: "您会参加吗？",
     yes: "我会出席",
@@ -168,7 +166,6 @@ const TEXT: Record<Exclude<Language, null>, Dictionary> = {
     redLabel: "Red",
     whiteLabel: "White",
     rsvp: "RSVP",
-    #rsvpBy: "By 31st May 2026",
     rsvpLead: "Let us know if you can make it",
     attending: "Will you be attending?",
     yes: "I'll be there",
@@ -599,7 +596,6 @@ export default function WeddingInvitationWebsite() {
               <div className="mx-auto max-w-3xl rounded-[2rem] border border-[#e5d8cb] bg-white/80 p-8 shadow-sm md:p-10">
                 <div className="text-center">
                   <h2 className="block mt-2 text-lg md:text-xl underline font-bold">{t.rsvp}</h2>
-                  #<p className="block mt-2 text-lg md:text-xl">{t.rsvpBy}</p>
                   <p className="block mt-2 text-lg md:text-xl">{t.rsvpLead}</p>
                 </div>
 
